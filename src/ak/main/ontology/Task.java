@@ -1,3 +1,5 @@
+package ak.main.ontology;
+
 class Task implements Comparable<Task> {
     int priority;  // Priority level: higher values indicate higher priority
     String taskDescription;
