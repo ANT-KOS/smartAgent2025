@@ -1,10 +1,10 @@
 package ak.main.ontology;
 
-class Task implements Comparable<Task> {
-    int priority;  // Priority level: higher values indicate higher priority
-    String taskDescription;
+public class Task implements Comparable<Task> {
+    private int priority = 10;  // Priority level: higher values indicate higher priority
+    private String taskDescription = null;
 
-    Task(int priority, String taskDescription) {
+    public Task(int priority, String taskDescription) {
         this.priority = priority;
         this.taskDescription = taskDescription;
     }
@@ -12,5 +12,13 @@ class Task implements Comparable<Task> {
     @Override
     public int compareTo(Task other) {
         return Integer.compare(this.priority, other.priority);
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
     }
 }

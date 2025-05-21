@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="Basic agent setup" />
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="Fix project settings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/agents/MaintenanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/agents/MaintenanceAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/ontology/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/ontology/Task.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +32,16 @@
     &quot;accountId&quot;: &quot;63a88479-cb20-48c1-a857-0367aa791387&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/core/Agent.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/FIPA/stringsHelper.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookBuyerAgent.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookSellerAgent.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookSellerGui.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/core/behaviours/CyclicBehaviour.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/wrapper/ContainerController.class" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/util/PriorityQueue.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -39,34 +53,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Maven.smartAgent2025 [clean].executor": "Run",
+    "Maven.smartAgent2025 [compile].executor": "Run",
+    "Maven.smartAgent2025 [deploy].executor": "Run",
+    "Maven.smartAgent2025 [install].executor": "Run",
+    "Maven.smartAgent2025 [package].executor": "Run",
+    "Maven.smartAgent2025 [site].executor": "Run",
+    "Maven.smartAgent2025 [test].executor": "Run",
+    "Maven.smartAgent2025 [validate].executor": "Run",
+    "Maven.smartAgent2025 [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/antonis/IdeaProjects/smartAgent2025/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/ak/main" />
@@ -119,6 +136,7 @@
       <workItem from="1747859500358" duration="503000" />
       <workItem from="1747860027102" duration="32000" />
       <workItem from="1747860060241" duration="89000" />
+      <workItem from="1747860159973" duration="769000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -128,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747859989441</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix project settings">
+      <option name="closed" value="true" />
+      <created>1747860397316</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747860397316</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Basic agent setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic agent setup" />
+    <MESSAGE value="Fix project settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix project settings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
