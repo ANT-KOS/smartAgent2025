@@ -1,6 +1,7 @@
 package ak.main.Ontology.Machines;
 
 import ak.main.Ontology.Constants.MachineType;
+import ak.main.Ontology.Sensors.*;
 import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import ak.main.Ontology.Sensors.Dto.SensorThreshold;
 
@@ -21,6 +22,19 @@ public class CncMachine extends Machine {
                 new SensorThreshold(SensorTypes.POSITION.getSensorType(), 0.1),
                 new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 5, 8)
         ));
+    }
+
+    @Override
+    public List<AbstractSensor> getSensors() {
+        return List.of(
+                new TemperatureSensor(),
+                new VibrationSensor(),
+                new SpindleSensor(),
+                new CurrentSensor(),
+                new FlowSensor(),
+                new PositionSensor(),
+                new PressureSensor()
+        );
     }
 
     @Override

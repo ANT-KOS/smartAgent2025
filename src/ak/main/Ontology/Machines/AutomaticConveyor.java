@@ -1,6 +1,7 @@
 package ak.main.Ontology.Machines;
 
 import ak.main.Ontology.Constants.MachineType;
+import ak.main.Ontology.Sensors.*;
 import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import ak.main.Ontology.Sensors.Dto.SensorThreshold;
 
@@ -18,6 +19,16 @@ public class AutomaticConveyor extends Machine{
                 new SensorThreshold(SensorTypes.BELT_ALIGNMENT.getSensorType(), -2, 2),
                 new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 5, 20)
         ));
+    }
+
+    @Override
+    public List<AbstractSensor> getSensors() {
+        return List.of(
+                new TemperatureSensor(),
+                new VibrationSensor(),
+                new BeltAlignmentSensor(),
+                new CurrentSensor()
+        );
     }
 
     @Override

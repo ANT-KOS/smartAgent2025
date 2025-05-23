@@ -1,6 +1,7 @@
 package ak.main.Ontology.Machines;
 
 import ak.main.Ontology.Constants.MachineType;
+import ak.main.Ontology.Sensors.*;
 import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import ak.main.Ontology.Sensors.Dto.SensorThreshold;
 
@@ -21,6 +22,19 @@ public class RoboticWelder extends Machine{
                 new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 2),
                 new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 35)
         ));
+    }
+
+    @Override
+    public List<AbstractSensor> getSensors() {
+        return List.of(
+                new WeldingTemperatureSensor(),
+                new CurrentSensor(),
+                new VoltageSensor(),
+                new GasFlowSensor(),
+                new PositionSensor(),
+                new VibrationSensor(),
+                new FumeDetectionSensor()
+        );
     }
 
     @Override

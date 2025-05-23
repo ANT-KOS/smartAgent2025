@@ -20,7 +20,8 @@ public enum SensorClasses {
     VIBRATION(VibrationSensor.class),
     VOLTAGE(VoltageSensor.class),
     WELDING_CURRENT(CurrentSensor.class),
-    WELDING_TEMPERATURE(TemperatureSensor.class);
+    WELDING_TEMPERATURE(TemperatureSensor.class),
+    SPRAY_GUN_FLOW(SprayGunFlowSensor.class);
 
     private final Class<?> sensorClass;
 

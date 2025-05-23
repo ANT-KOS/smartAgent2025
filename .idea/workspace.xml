@@ -4,40 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Added sensors&#10;WIP: Adding Machines">
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ArcVoltageSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/BeltAlignmentSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorClasses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FumeDetectionSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/GasFlowSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingCurrent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingTemperatureSensor.java" afterDir="false" />
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Added machines&#10;DONE: Added more sensors&#10;DONE: Created ontology&#10;DONE: Name convention fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/Priority.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantFlowSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SensorThreshold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorThreshold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/constants/SensorTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorTypes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +152,7 @@
       <workItem from="1747860060241" duration="89000" />
       <workItem from="1747860159973" duration="1835000" />
       <workItem from="1747944373390" duration="1925000" />
-      <workItem from="1747993602169" duration="20990000" />
+      <workItem from="1747993602169" duration="22445000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -214,18 +186,30 @@
       <option name="project" value="LOCAL" />
       <updated>1748020757966</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DONE: Added machines&#10;DONE: Added more sensors&#10;DONE: Created ontology&#10;DONE: Name convention fix">
+      <option name="closed" value="true" />
+      <created>1748026104287</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748026104287</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Basic agent setup" />
     <MESSAGE value="Fix project settings" />
     <MESSAGE value="WIP: Add scenarios to trigger MaintenanceAgent" />
     <MESSAGE value="DONE: Added sensors&#10;WIP: Adding Machines" />
-    <option name="LAST_COMMIT_MESSAGE" value="DONE: Added sensors&#10;WIP: Adding Machines" />
+    <MESSAGE value="DONE: Added machines&#10;DONE: Added more sensors&#10;DONE: Created ontology&#10;DONE: Name convention fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="DONE: Added machines&#10;DONE: Added more sensors&#10;DONE: Created ontology&#10;DONE: Name convention fix" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

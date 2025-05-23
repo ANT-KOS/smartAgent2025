@@ -1,6 +1,7 @@
 package ak.main.Ontology.Machines;
 
 import ak.main.Ontology.Constants.MachineType;
+import ak.main.Ontology.Sensors.*;
 import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import ak.main.Ontology.Sensors.Dto.SensorThreshold;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 public class AutomatedPainting extends Machine {
     private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
+    private final List<AbstractSensor> sensorTypes = new ArrayList<>();
 
     public AutomatedPainting() {
         sensorThresholds.addAll(Arrays.asList(
@@ -19,6 +21,17 @@ public class AutomatedPainting extends Machine {
                 new SensorThreshold(SensorTypes.FLOW.getSensorType(), 100, 300),
                 new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 5)
         ));
+    }
+
+    @Override
+    public List<AbstractSensor> getSensors() {
+        return List.of(
+                new PressureSensor(),
+                new TemperatureSensor(),
+                new HumiditySensor(),
+                new SprayGunFlowSensor(),
+                new FumeDetectionSensor()
+        );
     }
 
     @Override
