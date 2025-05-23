@@ -1,11 +1,11 @@
 package ak.main.Ontology.Sensors;
 
-import ak.main.Ontology.Sensors.constants.SensorTypes;
+import ak.main.Ontology.Sensors.Constants.SensorTypes;
 
 import java.util.Random;
 
 //METRIC: mm
-public class PositionSensor extends Sensor {
+public class PositionSensor extends AbstractSensor {
     private final Random random = new Random();
 
     @Override
@@ -15,6 +15,6 @@ public class PositionSensor extends Sensor {
 
     @Override
     public double getReading() {
-        return 0 + random.nextDouble() * 0.2;
+        return -4 + random.nextDouble() * 8;
     }
 }

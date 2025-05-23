@@ -1,11 +1,11 @@
 package ak.main.Ontology.Sensors;
 
-import ak.main.Ontology.Sensors.constants.SensorTypes;
+import ak.main.Ontology.Sensors.Constants.SensorTypes;
 
 import java.util.Random;
 
 //METRIC: Percentage
-public class HumiditySensor extends Sensor {
+public class HumiditySensor extends AbstractSensor {
     private final Random random = new Random();
 
     @Override

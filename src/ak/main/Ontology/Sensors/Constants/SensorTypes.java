@@ -1,4 +1,4 @@
-package ak.main.Ontology.Sensors.constants;
+package ak.main.Ontology.Sensors.Constants;
 
 public enum SensorTypes {
     TEMPERATURE("temperature"),
@@ -9,11 +9,10 @@ public enum SensorTypes {
     VIBRATION("vibration"),
     SPINDLE_RPM("spindle_rpm"),
     CURRENT("current"),
-    COOLANT_FLOW("coolant_flow"),
     POSITION("position"),
-    AIR_PRESSURE("air_pressure"),
-    FLOW("flow");
-
+    FLOW("flow"),
+    BELT_ALIGNMENT("belt_alignment"),
+    FUME_CONCENTRATION("fume_concentration");
     private final String sensorType;
 
     SensorTypes(String sensorType) {

@@ -1,7 +1,8 @@
 package ak.main.Agents;
 
-import ak.main.Ontology.Sensors.constants.SensorTypes;
+import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import jade.core.Agent;
+
 import java.util.Map;
 
 public class SensorAgent extends Agent {

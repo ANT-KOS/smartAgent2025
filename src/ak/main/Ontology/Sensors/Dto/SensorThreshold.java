@@ -1,4 +1,4 @@
-package ak.main.Ontology.Sensors;
+package ak.main.Ontology.Sensors.Dto;
 
 import jade.content.Concept;
 

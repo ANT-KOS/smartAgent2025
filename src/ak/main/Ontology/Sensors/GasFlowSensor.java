@@ -2,12 +2,12 @@ package ak.main.Ontology.Sensors;
 
 import java.util.Random;
 
-//METRIC: bar
-public class PneymaticSystemSensor extends PressureSensor {
+//METRIC L/min
+public class GasFlowSensor extends FlowSensor{
     private final Random random = new Random();
 
     @Override
     public double getReading() {
-        return 5 + random.nextDouble() * 10;
+        return 8 + random.nextDouble() + 20;
     }
 }

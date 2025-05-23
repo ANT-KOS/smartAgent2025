@@ -5,34 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Added sensors&#10;WIP: Adding Machines">
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/Priority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Sensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SensorThreshold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/constants/SensorTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ArcVoltageSensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/BeltAlignmentSensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorClasses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FumeDetectionSensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/GasFlowSensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingCurrent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingTemperatureSensor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/agents/MaintenanceAgent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/agents/SensorAgent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/ontology/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/Priority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantFlowSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SensorThreshold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorThreshold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/constants/SensorTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorTypes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -175,7 +180,7 @@
       <workItem from="1747860060241" duration="89000" />
       <workItem from="1747860159973" duration="1835000" />
       <workItem from="1747944373390" duration="1925000" />
-      <workItem from="1747993602169" duration="15683000" />
+      <workItem from="1747993602169" duration="20990000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -201,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747861042660</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DONE: Added sensors&#10;WIP: Adding Machines">
+      <option name="closed" value="true" />
+      <created>1748020757966</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748020757966</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

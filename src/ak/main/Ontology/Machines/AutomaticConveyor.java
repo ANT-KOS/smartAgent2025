@@ -8,19 +8,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HydraulicPress extends Machine {
+public class AutomaticConveyor extends Machine{
     private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
 
-    public HydraulicPress() {
-        this.sensorThresholds.addAll(Arrays.asList(
-                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 30, 70),
-                new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 100, 250),
+    public AutomaticConveyor() {
+        sensorThresholds.addAll(Arrays.asList(
+                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 30, 80),
                 new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 1.5),
-                new SensorThreshold(SensorTypes.POSITION.getSensorType(), -0.1, 0.1),
-                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 15, 40),
-                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 10, 50)
+                new SensorThreshold(SensorTypes.BELT_ALIGNMENT.getSensorType(), -2, 2),
+                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 5, 20)
         ));
     }
+
     @Override
     public List<SensorThreshold> getSensorThresholds() {
         return sensorThresholds;
@@ -28,7 +27,7 @@ public class HydraulicPress extends Machine {
 
     @Override
     public String getMachineType() {
-        return MachineType.HYDRAULIC_PRESS.getMachineType();
+        return MachineType.AUTOMATIC_CONVEYOR.getMachineType();
     }
 
     @Override

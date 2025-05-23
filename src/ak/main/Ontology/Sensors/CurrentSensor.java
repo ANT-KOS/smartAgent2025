@@ -1,11 +1,11 @@
 package ak.main.Ontology.Sensors;
 
-import ak.main.Ontology.Sensors.constants.SensorTypes;
+import ak.main.Ontology.Sensors.Constants.SensorTypes;
 
 import java.util.Random;
 
 //METRIC: A
-public class CurrentSensor extends Sensor {
+public class CurrentSensor extends AbstractSensor {
     private final Random random = new Random();
 
     @Override

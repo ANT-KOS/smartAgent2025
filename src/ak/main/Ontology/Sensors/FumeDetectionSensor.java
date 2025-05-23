@@ -4,17 +4,17 @@ import ak.main.Ontology.Sensors.Constants.SensorTypes;
 
 import java.util.Random;
 
-//METRIC: Pa (Pascals)
-public class PressureSensor extends AbstractSensor {
+//METRIC μg/m^3
+public class FumeDetectionSensor extends AbstractSensor {
     private final Random random = new Random();
 
     @Override
     public SensorTypes getSensorType() {
-        return SensorTypes.PRESSURE;
+        return SensorTypes.FUME_CONCENTRATION;
     }
 
     @Override
     public double getReading() {
-        return 20 + random.nextDouble() * 50;
+        return 10 + random.nextDouble() * 80;
     }
 }

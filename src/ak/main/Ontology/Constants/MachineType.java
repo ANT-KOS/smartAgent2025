@@ -3,10 +3,9 @@ package ak.main.Ontology.Constants;
 public enum MachineType {
     CNC_MACHINE("cncMachine"),
     HYDRAULIC_PRESS("hydraulicPress"),
-    AUTOMATED_CONVEYOR("automatedConveyor"),
-    ROBOTIC_WELDING("roboticWelding"),
-    AUTOMATED_PAINTING("automatedPainting"),
-    QUALITY_INSPECTION("qualityInspection");
+    AUTOMATIC_CONVEYOR("automaticConveyor"),
+    ROBOTIC_WELDER("roboticWelder"),
+    AUTOMATED_PAINTING("automatedPainting");
 
     private final String machineType;
 
