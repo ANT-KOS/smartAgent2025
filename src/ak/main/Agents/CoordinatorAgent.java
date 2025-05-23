@@ -1,4 +1,4 @@
-package ak.main.agents;
+package ak.main.Agents;
 
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
