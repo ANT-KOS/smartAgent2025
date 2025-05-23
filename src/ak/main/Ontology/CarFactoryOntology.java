@@ -67,6 +67,7 @@ public class CarFactoryOntology extends Ontology {
                 if (schemaAdded) {
                     machineConcreteClassesSchema.add("machineType", (PrimitiveSchema) getSchema(BasicOntology.STRING));
                     machineConcreteClassesSchema.add("sensorThresholds", sensorThresholdSchema, 0, ObjectSchema.UNLIMITED);
+                    machineConcreteClassesSchema.add("sensors", sensorTypesSchema, 0, ObjectSchema.UNLIMITED);
                     machineConcreteClassesSchema.add("status", (PrimitiveSchema) getSchema(BasicOntology.STRING));
                 }
             }

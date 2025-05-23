@@ -23,13 +23,13 @@ public enum SensorClasses {
     WELDING_TEMPERATURE(TemperatureSensor.class),
     SPRAY_GUN_FLOW(SprayGunFlowSensor.class);
 
-    private final Class<?> sensorClass;
+    private final Class<? extends AbstractSensor> sensorClass;
 
-    SensorClasses(Class<?> sensorClass) {
+    SensorClasses(Class<? extends AbstractSensor> sensorClass) {
         this.sensorClass = sensorClass;
     }
 
-    public Class<?> getSensorClass() {
+    public Class<? extends AbstractSensor> getSensorClass() {
         return sensorClass;
     }
 }

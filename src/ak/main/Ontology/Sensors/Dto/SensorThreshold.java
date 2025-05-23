@@ -37,4 +37,14 @@ public class SensorThreshold implements Concept {
     public Double getMax() {
         return max;
     }
+
+    public boolean isWithinThreshold(Double value) {
+        if (threshold == null) {
+            return value <= threshold;
+        } else if (min != null && max != null) {
+            return value >= min && value <= max;
+        }
+
+        return true;
+    }
 }
