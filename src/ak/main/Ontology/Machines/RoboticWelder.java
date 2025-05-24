@@ -10,23 +10,23 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RoboticWelder extends Machine{
-    private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
+    private final ArrayList<SensorThreshold> sensorThresholds = new ArrayList<>();
 
     public RoboticWelder() {
         sensorThresholds.addAll(Arrays.asList(
-                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 1200, 1500),
-                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 100, 300),
-                new SensorThreshold(SensorTypes.VOLTAGE.getSensorType(), 20, 35),
-                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 10, 25),
-                new SensorThreshold(SensorTypes.POSITION.getSensorType(), -2, 2),
-                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 2),
-                new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 35)
+                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 1200, 1500, 1190, 1510),
+                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 100, 300, 95, 305),
+                new SensorThreshold(SensorTypes.VOLTAGE.getSensorType(), 20, 35, 15, 40),
+                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 10, 25, 8, 30),
+                new SensorThreshold(SensorTypes.POSITION.getSensorType(), -2, 2, -2.5, 2.5),
+                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 2, null, 3.0),
+                new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 35, null,  75.0)
         ));
     }
 
     @Override
-    public List<AbstractSensor> getSensors() {
-        return List.of(
+    public ArrayList<AbstractSensor> getSensors() {
+        return new ArrayList<>(List.of(
                 new WeldingTemperatureSensor(),
                 new CurrentSensor(),
                 new VoltageSensor(),
@@ -34,22 +34,23 @@ public class RoboticWelder extends Machine{
                 new PositionSensor(),
                 new VibrationSensor(),
                 new FumeDetectionSensor()
-        );
+        ));
     }
 
     @Override
-    public List<SensorThreshold> getSensorThresholds() {
+    public ArrayList<SensorThreshold> getSensorThresholds() {
         return sensorThresholds;
     }
 
     @Override
-    public String getMachineType() {
-        return MachineType.ROBOTIC_WELDER.getMachineType();
+    public MachineType getMachineType() {
+        return MachineType.ROBOTIC_WELDER;
     }
 
     @Override
-    public void setStatus(String status) {
+    public Machine setStatus(String status) {
         this.status = status;
+        return null;
     }
 
     @Override

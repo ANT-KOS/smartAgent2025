@@ -1,37 +1,69 @@
 package ak.main.Agents;
 
+import ak.main.Ontology.CarFactoryOntology;
+import ak.main.Ontology.Constants.MachineStatus;
+import ak.main.Ontology.Constants.MachineType;
+import ak.main.Ontology.Sensors.Dto.SensorAlert;
+import jade.content.lang.sl.SLCodec;
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.lang.acl.UnreadableException;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CoordinatorAgent extends Agent {
+    private Map<String, ArrayList<SensorAlert>> machineAlerts = new HashMap<>();
+    private Map<MachineType, MachineStatus> machineStatusPerMachine = new HashMap<>();
+    private AID maintenanceAgent;
 
     protected void setup() {
-        System.out.println("Coordinator Agent " + getAID().getName() + " started.");
+        machineStatusPerMachine.putAll(Map.of(
+                MachineType.CNC_MACHINE, MachineStatus.OPERATING,
+                MachineType.AUTOMATED_PAINTING, MachineStatus.OPERATING,
+                MachineType.AUTOMATIC_CONVEYOR, MachineStatus.OPERATING,
+                MachineType.HYDRAULIC_PRESS, MachineStatus.OPERATING,
+                MachineType.ROBOTIC_WELDER, MachineStatus.OPERATING
+        ));
 
-        // Adding a cyclic behaviour to coordinate the maintenance process
-        addBehaviour(new CyclicBehaviour() {
-            @Override
-            public void action() {
-                ACLMessage msg = receive();  // Wait for failure reports from SensorAgent
-                if (msg != null) {
-                    System.out.println("Received failure report: " + msg.getContent());
+        getContentManager().registerLanguage(new SLCodec());
+        getContentManager().registerOntology(CarFactoryOntology.ontologyInstance);
+        maintenanceAgent = new AID("maintenanceAgent", AID.ISLOCALNAME);
 
-                    // Notify MaintenanceAgent to perform maintenance
-                    ACLMessage maintenanceRequest = new ACLMessage(ACLMessage.REQUEST);
-                    maintenanceRequest.addReceiver(getAID("MaintenanceAgent"));
-                    maintenanceRequest.setContent("Please fix the sensor.");
-                    send(maintenanceRequest);
+        addBehaviour(new SensorAlertReceiver());
+    }
 
-                    // Wait for maintenance confirmation
-                    ACLMessage maintenanceResponse = blockingReceive();
-                    if (maintenanceResponse != null) {
-                        System.out.println("Maintenance response: " + maintenanceResponse.getContent());
+    private class SensorAlertReceiver extends CyclicBehaviour {
+        public void action() {
+            MessageTemplate template = MessageTemplate.and(
+                    MessageTemplate.MatchOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY),
+                    MessageTemplate.MatchPerformative(ACLMessage.INFORM)
+            );
+
+            ACLMessage msg = myAgent.receive(template);
+            if (msg != null) {
+                try{
+                    ArrayList<SensorAlert> alerts = (ArrayList<SensorAlert>) msg.getContentObject();
+                    if (!alerts.isEmpty()) {
+                        for (SensorAlert alert : alerts) {
+                            MachineType machineType = alert.getMachineType();
+                            machineAlerts.get(machineType).add(alert);
+
+                            System.out.println("Received alert for machine " + machineType + ": " + alert.getSensorType());
+
+                            if (alert.isCritical() && machineStatusPerMachine.get(machineType) == MachineStatus.OPERATING) {
+
+                            }
+                        }
                     }
-                } else {
-                    block();  // Wait for the next message
+                } catch (UnreadableException e) {
+                    throw new RuntimeException(e);
                 }
             }
-        });
+        }
     }
 }

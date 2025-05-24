@@ -10,23 +10,23 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CncMachine extends Machine {
-    private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
+    private final ArrayList<SensorThreshold> sensorThresholds = new ArrayList<>();
 
     public CncMachine() {
         this.sensorThresholds.addAll(Arrays.asList(
-                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 75),
-                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 0.1, 1.5),
-                new SensorThreshold(SensorTypes.SPINDLE_RPM.getSensorType(), 1000, 8000),
-                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 30),
-                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 10),
-                new SensorThreshold(SensorTypes.POSITION.getSensorType(), 0.1),
-                new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 5, 8)
+                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 75, null, 85.0),
+                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 1.5, null, 2.5),
+                new SensorThreshold(SensorTypes.SPINDLE_RPM.getSensorType(), 1000, 8000, 500, 9000),
+                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 30, null, 35.0),
+                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 10, 8.0, null),
+                new SensorThreshold(SensorTypes.POSITION.getSensorType(), 0.1, null, 0.15),
+                new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 5, 8, 4, 9)
         ));
     }
 
     @Override
-    public List<AbstractSensor> getSensors() {
-        return List.of(
+    public ArrayList<AbstractSensor> getSensors() {
+        return new ArrayList<>(List.of(
                 new TemperatureSensor(),
                 new VibrationSensor(),
                 new SpindleSensor(),
@@ -34,22 +34,23 @@ public class CncMachine extends Machine {
                 new FlowSensor(),
                 new PositionSensor(),
                 new PressureSensor()
-        );
+        ));
     }
 
     @Override
-    public List<SensorThreshold> getSensorThresholds() {
+    public ArrayList<SensorThreshold> getSensorThresholds() {
         return sensorThresholds;
     }
 
     @Override
-    public String getMachineType() {
-        return MachineType.CNC_MACHINE.getMachineType();
+    public MachineType getMachineType() {
+        return MachineType.CNC_MACHINE;
     }
 
     @Override
-    public void setStatus(String status) {
+    public Machine setStatus(String status) {
         this.status = status;
+        return null;
     }
 
     @Override

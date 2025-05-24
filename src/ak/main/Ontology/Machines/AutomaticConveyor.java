@@ -10,40 +10,41 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AutomaticConveyor extends Machine{
-    private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
+    private final ArrayList<SensorThreshold> sensorThresholds = new ArrayList<>();
 
     public AutomaticConveyor() {
         sensorThresholds.addAll(Arrays.asList(
-                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 30, 80),
-                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 1.5),
-                new SensorThreshold(SensorTypes.BELT_ALIGNMENT.getSensorType(), -2, 2),
-                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 5, 20)
+                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 30, 80, 28, 90),
+                new SensorThreshold(SensorTypes.VIBRATION.getSensorType(), 1.5, null, 2.0),
+                new SensorThreshold(SensorTypes.BELT_ALIGNMENT.getSensorType(), -2, 2, -2.5, 2.5),
+                new SensorThreshold(SensorTypes.CURRENT.getSensorType(), 5, 20, 4, 25)
         ));
     }
 
     @Override
-    public List<AbstractSensor> getSensors() {
-        return List.of(
+    public ArrayList<AbstractSensor> getSensors() {
+         return new ArrayList<>(List.of(
                 new TemperatureSensor(),
                 new VibrationSensor(),
                 new BeltAlignmentSensor(),
                 new CurrentSensor()
-        );
+        ));
     }
 
     @Override
-    public List<SensorThreshold> getSensorThresholds() {
+    public ArrayList<SensorThreshold> getSensorThresholds() {
         return sensorThresholds;
     }
 
     @Override
-    public String getMachineType() {
-        return MachineType.AUTOMATIC_CONVEYOR.getMachineType();
+    public MachineType getMachineType() {
+        return MachineType.AUTOMATIC_CONVEYOR;
     }
 
     @Override
-    public void setStatus(String status) {
+    public Machine setStatus(String status) {
         this.status = status;
+        return null;
     }
 
     @Override

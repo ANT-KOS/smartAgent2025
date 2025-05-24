@@ -10,43 +10,43 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AutomatedPainting extends Machine {
-    private final List<SensorThreshold> sensorThresholds = new ArrayList<>();
-    private final List<AbstractSensor> sensorTypes = new ArrayList<>();
+    private final ArrayList<SensorThreshold> sensorThresholds = new ArrayList<>();
 
     public AutomatedPainting() {
         sensorThresholds.addAll(Arrays.asList(
-                new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 2, 4),
-                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 20, 30),
-                new SensorThreshold(SensorTypes.HUMIDITY.getSensorType(), 40, 60),
-                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 100, 300),
-                new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 5)
+                new SensorThreshold(SensorTypes.PRESSURE.getSensorType(), 2, 4, 1, 5),
+                new SensorThreshold(SensorTypes.TEMPERATURE.getSensorType(), 20, 30, 15, 35),
+                new SensorThreshold(SensorTypes.HUMIDITY.getSensorType(), 40, 60, 35, 65),
+                new SensorThreshold(SensorTypes.FLOW.getSensorType(), 100, 300, 90, 310),
+                new SensorThreshold(SensorTypes.FUME_CONCENTRATION.getSensorType(), 5, null, 6.0)
         ));
     }
 
     @Override
-    public List<AbstractSensor> getSensors() {
-        return List.of(
+    public ArrayList<AbstractSensor> getSensors() {
+        return new ArrayList<>(List.of(
                 new PressureSensor(),
                 new TemperatureSensor(),
                 new HumiditySensor(),
                 new SprayGunFlowSensor(),
                 new FumeDetectionSensor()
-        );
+        ));
     }
 
     @Override
-    public List<SensorThreshold> getSensorThresholds() {
+    public ArrayList<SensorThreshold> getSensorThresholds() {
         return sensorThresholds;
     }
 
     @Override
-    public String getMachineType() {
-        return MachineType.AUTOMATED_PAINTING.getMachineType();
+    public MachineType getMachineType() {
+        return MachineType.AUTOMATED_PAINTING;
     }
 
     @Override
-    public void setStatus(String status) {
+    public Machine setStatus(String status) {
         this.status = status;
+        return null;
     }
 
     @Override
