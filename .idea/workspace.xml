@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: SensorAgent">
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: SensorAgent&#10;WIP: CoordinatorAgent">
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/Requests/MaintenanceRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Dto/MachineStatusChange.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorAlert.java" afterDir="false" />
@@ -164,7 +165,7 @@
       <workItem from="1747860159973" duration="1835000" />
       <workItem from="1747944373390" duration="1925000" />
       <workItem from="1747993602169" duration="25096000" />
-      <workItem from="1748090091032" duration="25739000" />
+      <workItem from="1748090091032" duration="26126000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -238,7 +239,8 @@
     <MESSAGE value="DONE: Added machines&#10;DONE: Added more sensors&#10;DONE: Created ontology&#10;DONE: Name convention fix" />
     <MESSAGE value="DONE: Added known sensors per machine&#10;WIP: SensorAgent" />
     <MESSAGE value="WIP: SensorAgent" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP: SensorAgent" />
+    <MESSAGE value="DONE: SensorAgent&#10;WIP: CoordinatorAgent" />
+    <option name="LAST_COMMIT_MESSAGE" value="DONE: SensorAgent&#10;WIP: CoordinatorAgent" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
