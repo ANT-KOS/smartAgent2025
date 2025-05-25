@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Edit gitignore">
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Change project example">
       <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/Constants/AgentNames.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/WarehouseAgent.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
@@ -217,7 +217,7 @@
       <workItem from="1747993602169" duration="25096000" />
       <workItem from="1748090091032" duration="26174000" />
       <workItem from="1748174748111" duration="20000" />
-      <workItem from="1748178058696" duration="32494000" />
+      <workItem from="1748178058696" duration="32929000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -337,7 +337,8 @@
     <MESSAGE value="DONE: SensorAgent&#10;WIP: CoordinatorAgent" />
     <MESSAGE value="DONE: MaintenanceAgent&#10;DONE: Main class" />
     <MESSAGE value="DONE: Edit gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="DONE: Edit gitignore" />
+    <MESSAGE value="WIP: Change project example" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: Change project example" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
