@@ -4,23 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: SensorAgent&#10;WIP: CoordinatorAgent">
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Edit gitignore">
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/Constants/AgentNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/WarehouseAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaterialRequestReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/Materials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MaintenanceRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarAssemblyMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Orders/MaterialOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Orders/MaterialRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/Requests/MaintenanceRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Dto/MachineStatusChange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ArcVoltageSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/BeltAlignmentSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantFlowSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorThreshold.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FumeDetectionSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/GasFlowSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SprayGunFlowSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingCurrent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingTemperatureSensor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,14 +98,22 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/Boot.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/core/Agent.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/NodeDescriptor.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/FIPA/stringsHelper.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookBuyerAgent.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookSellerAgent.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookSellerGui.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/core/behaviours/CyclicBehaviour.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/wrapper/ContainerController.class" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Class.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
     <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/util/PriorityQueue.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.desktop/java/awt/Component.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.desktop/java/awt/Toolkit.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.desktop/sun/awt/SunToolkit.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -76,37 +126,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/antonis/IdeaProjects/smartAgent2025/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Maven.smartAgent2025 [clean].executor": "Run",
+    "Maven.smartAgent2025 [compile].executor": "Run",
+    "Maven.smartAgent2025 [deploy].executor": "Run",
+    "Maven.smartAgent2025 [install].executor": "Run",
+    "Maven.smartAgent2025 [package].executor": "Run",
+    "Maven.smartAgent2025 [site].executor": "Run",
+    "Maven.smartAgent2025 [test].executor": "Run",
+    "Maven.smartAgent2025 [validate].executor": "Run",
+    "Maven.smartAgent2025 [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/antonis/IdeaProjects/smartAgent2025/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31172413",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/ak/main" />
@@ -167,7 +217,7 @@
       <workItem from="1747993602169" duration="25096000" />
       <workItem from="1748090091032" duration="26174000" />
       <workItem from="1748174748111" duration="20000" />
-      <workItem from="1748178058696" duration="12434000" />
+      <workItem from="1748178058696" duration="32494000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -241,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748129525645</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="DONE: MaintenanceAgent&#10;DONE: Main class">
+      <option name="closed" value="true" />
+      <created>1748191162916</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748191162916</updated>
+    </task>
+    <task id="LOCAL-00011" summary="DONE: Edit gitignore">
+      <option name="closed" value="true" />
+      <created>1748191200461</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748191200461</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,8 +335,36 @@
     <MESSAGE value="DONE: Added known sensors per machine&#10;WIP: SensorAgent" />
     <MESSAGE value="WIP: SensorAgent" />
     <MESSAGE value="DONE: SensorAgent&#10;WIP: CoordinatorAgent" />
-    <option name="LAST_COMMIT_MESSAGE" value="DONE: SensorAgent&#10;WIP: CoordinatorAgent" />
+    <MESSAGE value="DONE: MaintenanceAgent&#10;DONE: Main class" />
+    <MESSAGE value="DONE: Edit gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="DONE: Edit gitignore" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java</url>
+          <line>961</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Class.java</url>
+          <line>2644</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.desktop/sun/awt/SunToolkit.java</url>
+          <line>723</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

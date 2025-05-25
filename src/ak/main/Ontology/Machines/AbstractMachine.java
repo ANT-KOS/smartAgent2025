@@ -1,39 +1,60 @@
 package ak.main.Ontology.Machines;
 
+import ak.main.Ontology.Constants.MachineResponse;
 import ak.main.Ontology.Constants.MachineType;
-import ak.main.Ontology.Sensors.AbstractSensor;
-import ak.main.Ontology.Sensors.Constants.SensorTypes;
-import ak.main.Ontology.Sensors.Dto.SensorThreshold;
 import jade.content.Concept;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Random;
 
 public abstract class AbstractMachine implements Concept {
-    protected final ArrayList<SensorThreshold> sensorThresholds = new ArrayList<>();
-    protected final Map<SensorTypes, String> sensorMap = new HashMap<>();
-    public abstract ArrayList<SensorThreshold> getSensorThresholds();
+    private int maxAttempts = 5;
+    protected ArrayList<MachineResponse> responses = new ArrayList<>();
+    protected boolean stopped = false;
     public abstract MachineType getMachineType();
 
-    public ArrayList<AbstractSensor> getSensors() {
-        ArrayList<AbstractSensor> sensors = new ArrayList<>();
+    public ArrayList<MachineResponse> getMachineResponses() {
+        double selectionProbability = 0.2;
+        Random random = new Random();
 
-        for (Map.Entry<SensorTypes, String> entry : sensorMap.entrySet()) {
-            try {
-                String className = entry.getValue();
-                Class<?> clazz = Class.forName(className);
-
-                AbstractSensor sensor = (AbstractSensor) clazz.getDeclaredConstructor().newInstance();
-
-                sensors.add(sensor);
-            } catch (ClassNotFoundException | InvocationTargetException | InstantiationException |
-                     IllegalAccessException | NoSuchMethodException e) {
-                throw new RuntimeException("Error instantiating sensor class", e);
+        ArrayList<MachineResponse> randomResponses = new ArrayList<>();
+        for (MachineResponse r : responses) {
+            if (random.nextDouble() < selectionProbability && !r.equals(MachineResponse.MACHINE_STOPPED)) {
+                randomResponses.add(r);
             }
         }
 
-        return sensors;
+        if (stopped) {
+            ArrayList<MachineResponse> stoppedResponse = new ArrayList<>();
+            stoppedResponse.add(MachineResponse.MACHINE_STOPPED);
+            return stoppedResponse;
+        }
+
+        return randomResponses;
+    }
+
+    public void start() {
+        stopped = false;
+        responses.clear();
+    }
+
+    public void stop() {
+        stopped = true;
+    }
+
+    public boolean repair() {
+        Random random = new Random();
+        for (int i = 0; i < maxAttempts-1; i++) {
+            boolean success = random.nextBoolean();
+            System.out.println("Attempt " + (i + 1) + " to repair: " + this.getMachineType().getMachineType());
+
+            if (success) {
+                System.out.println("Repair Success");
+                return true;
+            }
+        }
+
+        System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
+        return true;
     }
 }

@@ -1,13 +1,13 @@
 package ak.main.Ontology.Constants;
 
-import ak.main.Ontology.Machines.*;
-
 public enum MachineType {
-    CNC_MACHINE("cncMachine"),
-    HYDRAULIC_PRESS("hydraulicPress"),
-    AUTOMATIC_CONVEYOR("automaticConveyor"),
-    ROBOTIC_WELDER("roboticWelder"),
-    AUTOMATED_PAINTING("automatedPainting");
+    CAR_BODY_CONSTRUCTION("carBodyConstruction"),
+    CAR_WHEEL_CONSTRUCTION("carWheelConstruction"),
+    CAR_INTERIOR_CHASSIS_CONSTRUCTION("carInteriorChassisConstruction"),
+    CAR_PAINTING("carPainting"),
+    CAR_PACKAGING("carPackaging"),
+    CAR_PARTS_MONITORING("carPartsMonitoring"),
+    CAR_ASSEMBLY("carAssembly");
 
     private final String machineType;
 
@@ -17,15 +17,5 @@ public enum MachineType {
 
     public String getMachineType() {
         return machineType;
-    }
-
-    public AbstractMachine getMachine() {
-        return switch (this) {
-            case MachineType.CNC_MACHINE -> new CncMachine();
-            case MachineType.AUTOMATED_PAINTING -> new AutomatedPainting();
-            case MachineType.AUTOMATIC_CONVEYOR -> new AutomaticConveyor();
-            case MachineType.HYDRAULIC_PRESS -> new HydraulicPress();
-            case MachineType.ROBOTIC_WELDER -> new RoboticWelder();
-        };
     }
 }

@@ -1,7 +1,7 @@
 import ak.main.Agents.CoordinatorAgent;
+import ak.main.Agents.MachineAgent;
 import ak.main.Agents.MaintenanceAgent;
-import ak.main.Agents.SensorAgent;
-import ak.main.Ontology.Machines.*;
+import ak.main.Ontology.Machines.AbstractMachine;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
@@ -33,7 +33,7 @@ public class Main {
                 AbstractMachine machine = (AbstractMachine) machineClass.newInstance();
                 String agentName = "SensorAgent_" + machine.getMachineType().getMachineType();
 
-                container.createNewAgent(agentName, SensorAgent.class.getName(), new Object[]{machine}).start();
+                container.createNewAgent(agentName, MachineAgent.class.getName(), new Object[]{machine}).start();
             }
 
             container.createNewAgent("MaintenanceAgent", MaintenanceAgent.class.getName(), null).start();
