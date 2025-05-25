@@ -19,8 +19,8 @@ public enum MachineType {
         return machineType;
     }
 
-    public Machine getMachine(MachineType machineType) {
-        return switch (machineType) {
+    public AbstractMachine getMachine() {
+        return switch (this) {
             case MachineType.CNC_MACHINE -> new CncMachine();
             case MachineType.AUTOMATED_PAINTING -> new AutomatedPainting();
             case MachineType.AUTOMATIC_CONVEYOR -> new AutomaticConveyor();

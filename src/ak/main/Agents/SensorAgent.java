@@ -1,11 +1,12 @@
 package ak.main.Agents;
 
 import ak.main.Ontology.CarFactoryOntology;
-import ak.main.Ontology.Machines.Machine;
+import ak.main.Ontology.Machines.AbstractMachine;
 import ak.main.Ontology.Sensors.AbstractSensor;
 import ak.main.Ontology.Sensors.Constants.SensorTypes;
 import ak.main.Ontology.Sensors.Dto.SensorAlert;
 import ak.main.Ontology.Sensors.Dto.SensorThreshold;
+import jade.content.lang.sl.SLCodec;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.TickerBehaviour;
@@ -15,16 +16,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SensorAgent extends Agent {
-    private Machine machine;
+    private AbstractMachine machine;
     private AID coordinatorAgent;
 
     @Override
     protected void setup() {
         coordinatorAgent = new AID("CoordinatorAgent", AID.ISLOCALNAME);
+        getContentManager().registerLanguage(new SLCodec());
+        getContentManager().registerOntology(CarFactoryOntology.ontologyInstance);
 
         Object[] args = getArguments();
-        if (args != null && args.length > 0 && args[0] instanceof Machine) {
-            this.machine = (Machine) args[0];
+        if (args != null && args.length > 0 && args[0] instanceof AbstractMachine) {
+            this.machine = (AbstractMachine) args[0];
 
             addBehaviour(new TickerBehaviour(this, 1000) {
                 @Override
@@ -66,7 +69,6 @@ public class SensorAgent extends Agent {
             ACLMessage alertMessage = new ACLMessage(ACLMessage.INFORM);
             alertMessage.addReceiver(coordinatorAgent);
             alertMessage.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
-            alertMessage.setContent(alerts.toString());
             alertMessage.setContentObject(alerts);
             send(alertMessage);
         }

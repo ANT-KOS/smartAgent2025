@@ -3,7 +3,7 @@ package ak.main.Ontology.Constants;
 public enum MachineStatus {
     OPERATING("operating"),
     UNDER_MAINTENANCE("underMaintenance"),
-    FAULTY("faulty"),;
+    FAULTY("faulty");
 
     private final String machineStatus;
 

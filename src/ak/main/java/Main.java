@@ -1,35 +1,43 @@
-import jade.wrapper.AgentContainer;
+import ak.main.Agents.CoordinatorAgent;
+import ak.main.Agents.MaintenanceAgent;
+import ak.main.Agents.SensorAgent;
+import ak.main.Ontology.Machines.*;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
-import jade.wrapper.AgentController;
 import jade.core.Runtime;
+import jade.wrapper.AgentContainer;
 
 
 public class Main {
+    private static final Class<?>[] machineClasses = {
+            AutomatedPainting.class,
+            AutomaticConveyor.class,
+            CncMachine.class,
+            HydraulicPress.class,
+            RoboticWelder.class,
+    };
 
     public static void main(String[] args) {
         try {
-            // Create a runtime for the JADE platform
             Runtime runtime = Runtime.instance();
+            runtime.setCloseVM(true);
 
-            // Create a profile for the container
             Profile profile = new ProfileImpl();
             profile.setParameter(Profile.MAIN_HOST, "localhost");
-            profile.setParameter(Profile.MAIN_PORT, "1099");  // Default port, adjust as needed
+            profile.setParameter(Profile.MAIN_PORT, "1099");
+            profile.setParameter(Profile.GUI, "true");
 
-            // Create the main container
             AgentContainer container = runtime.createMainContainer(profile);
 
-            // Create agents and add them to the container
-            AgentController sensorAgent = container.createNewAgent("SensorAgent", "SensorAgent", null);  // No arguments needed
-            AgentController maintenanceAgent = container.createNewAgent("MaintenanceAgent", "MaintenanceAgent", null);  // No arguments needed
-            AgentController coordinatorAgent = container.createNewAgent("CoordinatorAgent", "CoordinatorAgent", null);  // No arguments needed
+            for (Class<?> machineClass : machineClasses) {
+                AbstractMachine machine = (AbstractMachine) machineClass.newInstance();
+                String agentName = "SensorAgent_" + machine.getMachineType().getMachineType();
 
-            // Start the agents
-            sensorAgent.start();
-            maintenanceAgent.start();
-            coordinatorAgent.start();
+                container.createNewAgent(agentName, SensorAgent.class.getName(), new Object[]{machine}).start();
+            }
 
+            container.createNewAgent("MaintenanceAgent", MaintenanceAgent.class.getName(), null).start();
+            container.createNewAgent("CoordinatorAgent", CoordinatorAgent.class.getName(), null).start();
         } catch (Exception e) {
             e.printStackTrace();
         }
