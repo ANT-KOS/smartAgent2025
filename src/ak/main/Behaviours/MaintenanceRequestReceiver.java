@@ -97,7 +97,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
         ACLMessage request = new ACLMessage(ACLMessage.REQUEST);
         request.addReceiver(new AID(AgentNames.MACHINE_AGENT.getAgentName(machineName), AID.ISLOCALNAME));
         request.setContent("START " + machineName);
-        request.setConversationId("machineStart_" + machineName + "_" + System.currentTimeMillis());
+        request.setConversationId("machineStart");
         myAgent.send(request);
         System.out.println("Machine " + machineName + " started");
     }

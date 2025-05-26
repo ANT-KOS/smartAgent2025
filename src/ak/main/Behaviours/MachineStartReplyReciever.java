@@ -1,8 +1,10 @@
 package ak.main.Behaviours;
 
+import ak.main.Agents.Constants.AgentNames;
 import ak.main.Agents.CoordinatorAgent;
 import ak.main.Ontology.Constants.MachineStatus;
 import ak.main.Ontology.Constants.MachineType;
+import jade.core.AID;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
@@ -16,14 +18,17 @@ public class MachineStartReplyReciever extends CyclicBehaviour {
     public void action() {
         MessageTemplate mt = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.INFORM),
-                MessageTemplate.MatchContent("^Machine .* started\\.$")
+                MessageTemplate.MatchConversationId("machineStart")
         );
+
+        mt = MessageTemplate.and(mt, MessageTemplate.MatchSender(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME)));
 
         ACLMessage msg = myAgent.receive(mt);
         if (msg != null) {
             String machineName = extractMachineName(msg.getContent());
             MachineType machineType = MachineType.fromValue(machineName);
             ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
+            System.out.println("DEBUG 1");
         } else {
             block();
         }

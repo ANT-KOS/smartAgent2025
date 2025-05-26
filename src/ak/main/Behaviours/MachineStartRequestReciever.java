@@ -30,10 +30,18 @@ public class MachineStartRequestReciever extends CyclicBehaviour {
                             && machine.getMachineType().getMachineName().equals(content.substring("START".length()).trim())
             ) {
                 machine.start();
+                String machineName = machine.getMachineType().getMachineName();
+
                 ACLMessage reply = msg.createReply();
                 reply.setPerformative(ACLMessage.INFORM);
                 reply.setContent("Machine " + machine.getMachineType().getMachineName() + " started");
                 myAgent.send(reply);
+
+                ACLMessage request = new ACLMessage(ACLMessage.REQUEST);
+                request.addReceiver(new AID(AgentNames.MACHINE_AGENT.getAgentName(machineName), AID.ISLOCALNAME));
+                request.setContent("START " + machineName);
+                request.setConversationId("machineStart");
+                myAgent.send(request);
             }
         } else {
             block();
