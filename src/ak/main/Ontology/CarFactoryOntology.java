@@ -43,7 +43,6 @@ public class CarFactoryOntology extends Ontology {
             add(materialRequestSchema, MaterialRequest.class);
             materialRequestSchema.add("material", (PrimitiveSchema) getSchema(BasicOntology.STRING));
             materialRequestSchema.add("response", (PrimitiveSchema) getSchema(BasicOntology.STRING));
-
         } catch (OntologyException e) {
             throw new RuntimeException(e);
         }

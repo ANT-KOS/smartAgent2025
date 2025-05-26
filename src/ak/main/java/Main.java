@@ -33,7 +33,7 @@ public class Main {
             AgentContainer container = runtime.createMainContainer(profile);
 
             for (Class<?> machineClass : machineClasses) {
-                AbstractMachine machine = (AbstractMachine) machineClass.newInstance();
+                AbstractMachine machine = (AbstractMachine) machineClass.getDeclaredConstructor().newInstance();
                 String agentName = AgentNames.MACHINE_AGENT.getAgentName(machine.getMachineType().getMachineName());
 
                 container.createNewAgent(agentName, MachineAgent.class.getName(), new Object[]{machine}).start();
