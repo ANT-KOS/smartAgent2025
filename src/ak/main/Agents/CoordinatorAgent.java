@@ -29,6 +29,7 @@ public class CoordinatorAgent extends Agent {
 
     public void changeMachineStatus(MachineType machineType, MachineStatus newStatus) {
         machineStatusPerMachine.computeIfAbsent(machineType, k -> newStatus);
+        System.out.println(machineStatusPerMachine);
     }
 
     public MachineStatus getMachineStatus(MachineType machineType) {

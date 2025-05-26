@@ -56,8 +56,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
                                  MachineResponse.PAINT_NOZZLE_BLOCKED,
                                  MachineResponse.PACKAGING_JAM,
                                  MachineResponse.MALFUNCTIONING_PRESS,
-                                 MachineResponse.SERVO_MALFUNCTION,
-                                 MachineResponse.DETECTION_FAILURE
+                                 MachineResponse.SERVO_MALFUNCTION
                                  -> handleMaintenanceRequest(machineResponseDto.getMachineType(), m);
                         }
                     }

@@ -11,7 +11,6 @@ public class CarPackagingMachine extends AbstractMachine {
                 MachineResponse.PACKAGING_MATERIAL_EMPTY,
                 MachineResponse.PACKAGING_MATERIAL_LOW,
                 MachineResponse.PACKAGING_JAM,
-                MachineResponse.DETECTION_FAILURE,
                 MachineResponse.MACHINE_STOPPED
         ));
     }
