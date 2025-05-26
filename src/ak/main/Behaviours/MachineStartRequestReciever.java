@@ -15,8 +15,6 @@ public class MachineStartRequestReciever extends CyclicBehaviour {
         this.machine = machine;
     }
 
-    //No need for behaviour. Will send message on repair finish
-
     public void action() {
         MessageTemplate messageTemplate = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.REQUEST),
@@ -29,12 +27,12 @@ public class MachineStartRequestReciever extends CyclicBehaviour {
             if (
                     content != null
                             && content.startsWith("START")
-                            && machine.getMachineType().getMachineType().equals(content.substring("START".length()).trim())
+                            && machine.getMachineType().getMachineName().equals(content.substring("START".length()).trim())
             ) {
                 machine.start();
                 ACLMessage reply = msg.createReply();
                 reply.setPerformative(ACLMessage.INFORM);
-                reply.setContent("Machine " + machine.getMachineType().getMachineType() + " started");
+                reply.setContent("Machine " + machine.getMachineType().getMachineName() + " started");
                 myAgent.send(reply);
             }
         } else {

@@ -15,8 +15,6 @@ public class MachineStopRequestReciever extends CyclicBehaviour {
         this.machine = machine;
     }
 
-    //No need for behaviour. Will send message on repair finish
-
     public void action() {
         MessageTemplate messageTemplate = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.REQUEST),
@@ -29,13 +27,13 @@ public class MachineStopRequestReciever extends CyclicBehaviour {
             if (
                     content != null
                             && content.startsWith("STOP")
-                            && machine.getMachineType().getMachineType().equals(content.substring("STOP".length()).trim())
+                            && machine.getMachineType().getMachineName().equals(content.substring("STOP".length()).trim())
             ) {
-                machine.start();
-                ACLMessage reply = msg.createReply();
-                reply.setPerformative(ACLMessage.INFORM);
-                reply.setContent("Machine " + machine.getMachineType().getMachineType() + " stopped");
-                myAgent.send(reply);
+                machine.stop();
+                ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+                message.setPerformative(ACLMessage.INFORM);
+                message.setContent("Machine " + machine.getMachineType().getMachineName() + " stopped");
+                myAgent.send(message);
             }
         } else {
             block();

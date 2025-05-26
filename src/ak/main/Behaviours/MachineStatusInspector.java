@@ -31,11 +31,11 @@ public class MachineStatusInspector extends CyclicBehaviour {
         );
 
         ACLMessage msg = myAgent.receive(template);
-        if (msg != null && msg.getSender().getLocalName().startsWith("SensorAgent_")) {
+        if (msg != null && msg.getSender().getLocalName().startsWith("MachineAgent_")) {
             try {
-                MachineResponsesDto machineResponsesDto = (MachineResponsesDto) msg.getContentObject();
-                if (!machineResponsesDto.getMachineResponses().isEmpty()) {
-                    for (MachineResponse m : machineResponsesDto.getMachineResponses()) {
+                MachineResponsesDto machineResponseDto = (MachineResponsesDto) msg.getContentObject();
+                if (!machineResponseDto.getMachineResponses().isEmpty()) {
+                    for (MachineResponse m : machineResponseDto.getMachineResponses()) {
                         switch (m) {
                             case MachineResponse.ALUMINIUM_LEVEL_LOW,
                                  MachineResponse.NO_ALUMINIUM -> handleMaterialRequest(Materials.ALUMINUM, m);
@@ -58,7 +58,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
                                  MachineResponse.MALFUNCTIONING_PRESS,
                                  MachineResponse.SERVO_MALFUNCTION,
                                  MachineResponse.DETECTION_FAILURE
-                                 -> handleMaintenanceRequest(machineResponsesDto.getMachineType(), m);
+                                 -> handleMaintenanceRequest(machineResponseDto.getMachineType(), m);
                         }
                     }
                 }
@@ -71,17 +71,18 @@ public class MachineStatusInspector extends CyclicBehaviour {
     }
 
     private void handleMaterialRequest(Materials material, MachineResponse machineResponse) throws IOException {
-        ACLMessage materialRequest = new ACLMessage(ACLMessage.INFORM);
+        ACLMessage materialRequest = new ACLMessage(ACLMessage.REQUEST);
         materialRequest.addReceiver(new AID(AgentNames.WAREHOUSE_AGENT.getAgentName(), AID.ISLOCALNAME));
         materialRequest.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
         materialRequest.setContentObject(new MaterialRequest()
                 .setMaterial(material)
                 .setResponse(machineResponse));
         myAgent.send(materialRequest);
+        System.out.println("Order for: " + material + " has been sent");
     }
 
     private void handleMaintenanceRequest(MachineType machineType, MachineResponse machineResponse) throws IOException {
-        String conversationId = "maintenance-" + machineType.getMachineType() + "-" + System.currentTimeMillis();
+        String conversationId = "maintenance-" + machineType.getMachineName() + "-" + System.currentTimeMillis();
 
         ACLMessage maintenanceRequest = new ACLMessage(ACLMessage.REQUEST);
         maintenanceRequest.addReceiver(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME));

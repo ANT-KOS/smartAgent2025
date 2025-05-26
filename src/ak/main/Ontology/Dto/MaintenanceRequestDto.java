@@ -17,7 +17,7 @@ public class MaintenanceRequestDto implements Concept {
         return this;
     }
 
-    public MachineResponse getMachineResponses() {
+    public MachineResponse getMachineResponse() {
         return machineResponse;
     }
 

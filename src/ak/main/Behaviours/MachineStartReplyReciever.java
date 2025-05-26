@@ -22,7 +22,7 @@ public class MachineStartReplyReciever extends CyclicBehaviour {
         ACLMessage msg = myAgent.receive(mt);
         if (msg != null) {
             String machineName = extractMachineName(msg.getContent());
-            MachineType machineType = MachineType.valueOf(machineName);
+            MachineType machineType = MachineType.fromValue(machineName);
             ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
         } else {
             block();

@@ -5,64 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Change project example">
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/Constants/AgentNames.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Agents/WarehouseAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaterialRequestReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/Materials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MaintenanceRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarAssemblyMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Orders/MaterialOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Orders/MaterialRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/SensorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaterialRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaterialRequestReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/CarFactoryOntology.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MaintenanceRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MaintenanceRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomatedPainting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AutomaticConveyor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CncMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/HydraulicPress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/RoboticWelder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/AbstractSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ArcVoltageSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/BeltAlignmentSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Constants/SensorTypes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CoolantFlowSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/CurrentSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorAlert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/Dto/SensorThreshold.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FlowSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/FumeDetectionSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/GasFlowSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/HumiditySensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/ParticleSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PneymaticSystemSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PositionSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/PressureSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SpindleSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/SprayGunFlowSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/TemperatureSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VibrationSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/VoltageSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingCurrent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Sensors/WeldingTemperatureSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +177,7 @@
       <workItem from="1747993602169" duration="25096000" />
       <workItem from="1748090091032" duration="26174000" />
       <workItem from="1748174748111" duration="20000" />
-      <workItem from="1748178058696" duration="32929000" />
+      <workItem from="1748178058696" duration="38779000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -307,7 +267,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748191200461</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="WIP: Change project example">
+      <option name="closed" value="true" />
+      <created>1748213502808</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748213502808</updated>
+    </task>
+    <task id="LOCAL-00013" summary="WIP: Change project example">
+      <option name="closed" value="true" />
+      <created>1748213514078</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748213514078</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,16 +329,6 @@
           <url>jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java</url>
           <line>961</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Class.java</url>
-          <line>2644</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.desktop/sun/awt/SunToolkit.java</url>
-          <line>723</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

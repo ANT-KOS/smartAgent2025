@@ -46,7 +46,7 @@ public abstract class AbstractMachine implements Concept {
         Random random = new Random();
         for (int i = 0; i < maxAttempts-1; i++) {
             boolean success = random.nextBoolean();
-            System.out.println("Attempt " + (i + 1) + " to repair: " + this.getMachineType().getMachineType());
+            System.out.println("Attempt " + (i + 1) + " to repair: " + this.getMachineType().getMachineName());
 
             if (success) {
                 System.out.println("Repair Success");

@@ -22,18 +22,15 @@ public class MaterialRequestReceiver extends CyclicBehaviour {
     public void action() {
         MessageTemplate messageTemplate = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.REQUEST),
-                MessageTemplate.MatchSender(new AID(AgentNames.COORDINATOR_AGENT.getAgentName(), AID.ISLOCALNAME))
-        );
-
-        messageTemplate = MessageTemplate.and(
-                messageTemplate,
-                MessageTemplate.MatchReceiver(new AID[]{new AID(AgentNames.COORDINATOR_AGENT.getAgentName(), AID.ISLOCALNAME)})
+                MessageTemplate.MatchReceiver(new AID[]{new AID(AgentNames.WAREHOUSE_AGENT.getAgentName(), AID.ISLOCALNAME)})
         );
 
         ACLMessage msg = myAgent.receive(messageTemplate);
         if (msg != null) {
+
             try{
                 MaterialRequest request = (MaterialRequest) msg.getContentObject();
+                System.out.println("Order received for: " + request.getMaterial());
                 MaterialOrder order = new MaterialOrder();
 
                 switch (request.getResponse()) {

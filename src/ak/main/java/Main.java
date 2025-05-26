@@ -1,7 +1,9 @@
+import ak.main.Agents.Constants.AgentNames;
 import ak.main.Agents.CoordinatorAgent;
 import ak.main.Agents.MachineAgent;
 import ak.main.Agents.MaintenanceAgent;
-import ak.main.Ontology.Machines.AbstractMachine;
+import ak.main.Agents.WarehouseAgent;
+import ak.main.Ontology.Machines.*;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
@@ -10,11 +12,12 @@ import jade.wrapper.AgentContainer;
 
 public class Main {
     private static final Class<?>[] machineClasses = {
-            AutomatedPainting.class,
-            AutomaticConveyor.class,
-            CncMachine.class,
-            HydraulicPress.class,
-            RoboticWelder.class,
+            CarAssemblyMachine.class,
+            CarBodyMachine.class,
+            CarInteriorChassisMachine.class,
+            CarPackagingMachine.class,
+            CarPaintMachine.class,
+            CarWheelMachine.class,
     };
 
     public static void main(String[] args) {
@@ -31,13 +34,14 @@ public class Main {
 
             for (Class<?> machineClass : machineClasses) {
                 AbstractMachine machine = (AbstractMachine) machineClass.newInstance();
-                String agentName = "SensorAgent_" + machine.getMachineType().getMachineType();
+                String agentName = AgentNames.MACHINE_AGENT.getAgentName(machine.getMachineType().getMachineName());
 
                 container.createNewAgent(agentName, MachineAgent.class.getName(), new Object[]{machine}).start();
             }
 
-            container.createNewAgent("MaintenanceAgent", MaintenanceAgent.class.getName(), null).start();
-            container.createNewAgent("CoordinatorAgent", CoordinatorAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName(), MaintenanceAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.COORDINATOR_AGENT.getAgentName(), CoordinatorAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.WAREHOUSE_AGENT.getAgentName(), WarehouseAgent.class.getName(), null).start();
         } catch (Exception e) {
             e.printStackTrace();
         }

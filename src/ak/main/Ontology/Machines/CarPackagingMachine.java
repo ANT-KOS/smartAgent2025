@@ -17,6 +17,6 @@ public class CarPackagingMachine extends AbstractMachine {
     }
 
     public MachineType getMachineType() {
-        return MachineType.CAR_ASSEMBLY;
+        return MachineType.CAR_PACKAGING;
     }
 }

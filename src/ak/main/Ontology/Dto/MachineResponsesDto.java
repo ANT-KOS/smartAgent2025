@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MachineResponsesDto implements Concept {
     private MachineType machineType;
-    private ArrayList<MachineResponse> machineRespons;
+    private ArrayList<MachineResponse> machineResponse;
 
     public MachineType getMachineType() {
         return machineType;
@@ -20,11 +20,11 @@ public class MachineResponsesDto implements Concept {
     }
 
     public ArrayList<MachineResponse> getMachineResponses() {
-        return machineRespons;
+        return machineResponse;
     }
 
     public MachineResponsesDto setMachineResponses(ArrayList<MachineResponse> machineRespons) {
-        this.machineRespons = machineRespons;
+        this.machineResponse = machineRespons;
         return this;
     }
 }

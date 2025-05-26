@@ -49,6 +49,9 @@ public class MaintenanceResponseReceiver extends CyclicBehaviour {
     }
 
     private MachineType extractMachineType(String response) {
-        return MachineType.valueOf(response.split(" ")[3].toUpperCase());
+        String[] parts = response.trim().split("\\s+");
+        String lastWord = parts[parts.length - 1];
+        lastWord = lastWord.replaceAll("[^a-zA-Z0-9]", "");
+        return MachineType.fromValue(lastWord);
     }
 }
