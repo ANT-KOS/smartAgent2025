@@ -42,7 +42,7 @@ public abstract class AbstractMachine implements Concept {
         stopped = true;
     }
 
-    public boolean repair() {
+    public void repair() {
         Random random = new Random();
         for (int i = 0; i < maxAttempts-1; i++) {
             boolean success = random.nextBoolean();
@@ -50,11 +50,9 @@ public abstract class AbstractMachine implements Concept {
 
             if (success) {
                 System.out.println("Repair Success");
-                return true;
             }
         }
 
         System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
-        return true;
     }
 }

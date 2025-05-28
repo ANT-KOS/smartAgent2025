@@ -7,9 +7,6 @@ import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class MachineStopReplyReciever extends CyclicBehaviour {
     public MachineStopReplyReciever(CoordinatorAgent agent) {
         super(agent);
@@ -20,14 +17,11 @@ public class MachineStopReplyReciever extends CyclicBehaviour {
         MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
 
         ACLMessage msg = myAgent.receive(mt);
-        if (msg != null) {
-            Pattern pattern = Pattern.compile("^Machine .* stopped\\.$");
-            Matcher matcher = pattern.matcher(msg.getContent());
-            if (matcher.matches()) {
-                String machineName = extractMachineName(msg.getContent());
-                MachineType machineType = MachineType.fromValue(machineName);
-                ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.STOPPED);
-            }
+        if (msg != null && msg.getContent().contains("stopped")) {
+            String machineName = extractMachineName(msg.getContent());
+            MachineType machineType = MachineType.fromValue(machineName);
+            ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.STOPPED);
+            System.out.println("FFEWFWEFWEFWEFWEFWEFWEWEEW");
         } else {
             block();
         }

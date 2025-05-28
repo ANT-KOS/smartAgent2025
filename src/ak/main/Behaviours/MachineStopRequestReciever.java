@@ -18,7 +18,7 @@ public class MachineStopRequestReciever extends CyclicBehaviour {
     public void action() {
         MessageTemplate messageTemplate = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.REQUEST),
-                MessageTemplate.MatchSender(new AID(AgentNames.COORDINATOR_AGENT.getAgentName(), AID.ISLOCALNAME))
+                MessageTemplate.MatchSender(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME))
         );
 
         ACLMessage msg = myAgent.receive(messageTemplate);
@@ -34,6 +34,7 @@ public class MachineStopRequestReciever extends CyclicBehaviour {
                 message.setPerformative(ACLMessage.INFORM);
                 message.setContent("Machine " + machine.getMachineType().getMachineName() + " stopped");
                 myAgent.send(message);
+                System.out.println("Machine STOP request to " + machine.getMachineType().getMachineName() + " received");
             }
         } else {
             block();

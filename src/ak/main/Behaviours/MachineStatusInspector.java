@@ -95,5 +95,6 @@ public class MachineStatusInspector extends CyclicBehaviour {
         myAgent.send(maintenanceRequest);
 
         ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.FAULTY);
+        System.out.println("Maintenance request for: " + machineType + " has been sent");
     }
 }

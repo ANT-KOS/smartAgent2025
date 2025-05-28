@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,37 +76,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;Maven.smartAgent2025 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.smartAgent2025 [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/antonis/IdeaProjects/smartAgent2025/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31172413&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Debug",
+    "Maven.smartAgent2025 [clean].executor": "Run",
+    "Maven.smartAgent2025 [compile].executor": "Run",
+    "Maven.smartAgent2025 [deploy].executor": "Run",
+    "Maven.smartAgent2025 [install].executor": "Run",
+    "Maven.smartAgent2025 [package].executor": "Run",
+    "Maven.smartAgent2025 [site].executor": "Run",
+    "Maven.smartAgent2025 [test].executor": "Run",
+    "Maven.smartAgent2025 [validate].executor": "Run",
+    "Maven.smartAgent2025 [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/antonis/IdeaProjects/smartAgent2025/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31172413",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/ak/main" />
@@ -166,7 +170,11 @@
       <workItem from="1748178058696" duration="39428000" />
       <workItem from="1748220009923" duration="31000" />
       <workItem from="1748276647857" duration="2839000" />
-      <workItem from="1748294148002" duration="1360000" />
+      <workItem from="1748294148002" duration="1491000" />
+      <workItem from="1748361460815" duration="5000" />
+      <workItem from="1748368770341" duration="88000" />
+      <workItem from="1748381306290" duration="25000" />
+      <workItem from="1748389018389" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -312,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748288963788</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748295610798</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748295610798</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,34 +378,29 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java</url>
           <line>25</line>
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

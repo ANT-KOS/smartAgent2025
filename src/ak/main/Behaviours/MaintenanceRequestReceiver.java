@@ -78,7 +78,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
         request.setContent("STOP " + machineName);
         request.setConversationId("machineStop_" + machineName + "_" + System.currentTimeMillis());
         myAgent.send(request);
-        System.out.println("Machine " + machineName + " stopped");
+        System.out.println("Machine stop request for" + machineName + " sent");
     }
 
     private void handleStartRequest(MaintenanceRequestDto maintenanceRequestDto) {

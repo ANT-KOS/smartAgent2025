@@ -34,6 +34,9 @@ public class MachineStatusSender extends TickerBehaviour {
                         .setMachineResponses(machineResponse)
                         .setMachineType(machine.getMachineType()));
                 myAgent.send(machineStatus);
+                System.out.println("Machine status sent to " + coordinatorAgent);
+                System.out.println("MACHINE: " + machine.getMachineType());
+                System.out.println("STATUS: " + machineResponse);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

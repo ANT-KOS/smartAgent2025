@@ -18,7 +18,7 @@ public class MachineStartRequestReciever extends CyclicBehaviour {
     public void action() {
         MessageTemplate messageTemplate = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.REQUEST),
-                MessageTemplate.MatchSender(new AID(AgentNames.COORDINATOR_AGENT.getAgentName(), AID.ISLOCALNAME))
+                MessageTemplate.MatchSender(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME))
         );
 
         ACLMessage msg = myAgent.receive(messageTemplate);
@@ -40,8 +40,8 @@ public class MachineStartRequestReciever extends CyclicBehaviour {
                 ACLMessage request = new ACLMessage(ACLMessage.REQUEST);
                 request.addReceiver(new AID(AgentNames.MACHINE_AGENT.getAgentName(machineName), AID.ISLOCALNAME));
                 request.setContent("START " + machineName);
-                request.setConversationId("machineStart");
                 myAgent.send(request);
+                System.out.println("Machine start up for" + machine.getMachineType().getMachineName() + " requested");
             }
         } else {
             block();

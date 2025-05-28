@@ -18,17 +18,17 @@ public class MachineStartReplyReciever extends CyclicBehaviour {
     public void action() {
         MessageTemplate mt = MessageTemplate.and(
                 MessageTemplate.MatchPerformative(ACLMessage.INFORM),
-                MessageTemplate.MatchConversationId("machineStart")
+                MessageTemplate.MatchSender(new AID(AgentNames.COORDINATOR_AGENT.getAgentName(), AID.ISLOCALNAME))
         );
-
-        mt = MessageTemplate.and(mt, MessageTemplate.MatchSender(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME)));
 
         ACLMessage msg = myAgent.receive(mt);
         if (msg != null) {
-            String machineName = extractMachineName(msg.getContent());
-            MachineType machineType = MachineType.fromValue(machineName);
-            ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
-            System.out.println("DEBUG 1");
+            if (msg.getContent().contains("START")) {
+                String machineName = extractMachineName(msg.getContent());
+                MachineType machineType = MachineType.fromValue(machineName);
+                ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
+                System.out.println("Machine " + machineType + " has started");
+            }
         } else {
             block();
         }
