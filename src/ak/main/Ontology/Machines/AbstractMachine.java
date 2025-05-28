@@ -13,7 +13,7 @@ public abstract class AbstractMachine implements Concept {
     public abstract MachineType getMachineType();
 
     public ArrayList<MachineResponse> getMachineResponses() {
-        double selectionProbability = 0.2;
+        double selectionProbability = 0.1;
         Random random = new Random();
 
         ArrayList<MachineResponse> randomResponses = new ArrayList<>();
