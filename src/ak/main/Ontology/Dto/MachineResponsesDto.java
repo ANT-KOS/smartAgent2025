@@ -23,8 +23,8 @@ public class MachineResponsesDto implements Concept {
         return machineResponse;
     }
 
-    public MachineResponsesDto setMachineResponses(ArrayList<MachineResponse> machineRespons) {
-        this.machineResponse = machineRespons;
+    public MachineResponsesDto setMachineResponses(ArrayList<MachineResponse> machineResponses) {
+        this.machineResponse = machineResponses;
         return this;
     }
 }

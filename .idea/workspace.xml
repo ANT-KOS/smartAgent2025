@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug" />
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +51,7 @@
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/examples/bookTrading/BookSellerGui.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/core/behaviours/CyclicBehaviour.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master.jar!/jade/wrapper/ContainerController.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/com/tilab/jade/jade/4.6.0/jade-4.6.0.jar!/jade/core/behaviours/Behaviour.class" root0="SKIP_INSPECTION" />
     <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Class.java" root0="SKIP_INSPECTION" />
     <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
     <setting file="jar:///usr/java/jdk-24-oracle-x64/lib/src.zip!/java.base/java/util/PriorityQueue.java" root0="SKIP_INSPECTION" />
@@ -165,7 +169,7 @@
       <workItem from="1748368770341" duration="88000" />
       <workItem from="1748381306290" duration="25000" />
       <workItem from="1748389018389" duration="3074000" />
-      <workItem from="1748437131440" duration="3900000" />
+      <workItem from="1748437131440" duration="8635000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -359,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748441844076</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748443651875</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748443651875</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,6 +429,11 @@
           <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java</url>
           <line>25</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
