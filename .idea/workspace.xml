@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +71,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Maven.smartAgent2025 [clean].executor": "Run",
     "Maven.smartAgent2025 [compile].executor": "Run",
     "Maven.smartAgent2025 [deploy].executor": "Run",
@@ -174,7 +166,8 @@
       <workItem from="1748361460815" duration="5000" />
       <workItem from="1748368770341" duration="88000" />
       <workItem from="1748381306290" duration="25000" />
-      <workItem from="1748389018389" duration="2730000" />
+      <workItem from="1748389018389" duration="3074000" />
+      <workItem from="1748437131440" duration="2180000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -328,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748295610798</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748392082588</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748392082588</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +380,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java</url>
-          <line>25</line>
+          <line>20</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -388,22 +389,17 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ak.main.Ontology.Dto.MaintenanceRequestDto" memberName="machineResponse" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

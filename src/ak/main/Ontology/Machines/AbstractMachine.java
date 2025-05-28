@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class AbstractMachine implements Concept {
-    private int maxAttempts = 5;
     protected ArrayList<MachineResponse> responses = new ArrayList<>();
     protected boolean stopped = false;
     public abstract MachineType getMachineType();
@@ -44,7 +43,8 @@ public abstract class AbstractMachine implements Concept {
 
     public void repair() {
         Random random = new Random();
-        for (int i = 0; i < maxAttempts-1; i++) {
+        int maxAttempts = 5;
+        for (int i = 0; i < maxAttempts -1; i++) {
             boolean success = random.nextBoolean();
             System.out.println("Attempt " + (i + 1) + " to repair: " + this.getMachineType().getMachineName());
 

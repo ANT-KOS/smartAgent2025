@@ -11,8 +11,4 @@ public enum MachineStatus {
     MachineStatus(String machineStatus) {
         this.machineStatus = machineStatus;
     }
-
-    public String getMachineStatus() {
-        return machineStatus;
-    }
 }
