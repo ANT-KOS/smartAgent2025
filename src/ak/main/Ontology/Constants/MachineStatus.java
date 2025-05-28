@@ -6,9 +6,6 @@ public enum MachineStatus {
     FAULTY("faulty"),
     STOPPED("stopped");
 
-    private final String machineStatus;
-
     MachineStatus(String machineStatus) {
-        this.machineStatus = machineStatus;
     }
 }

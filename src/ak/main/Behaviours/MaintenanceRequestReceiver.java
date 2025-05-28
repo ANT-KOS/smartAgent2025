@@ -42,6 +42,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
 
                 maintenanceRequestDto.getMachineType().getMachine().repair();
 
+                System.out.println("Finished repairing machine: " + maintenanceRequestDto.getMachineType().getMachineName());
                 ACLMessage repairCompletedResponse = new ACLMessage(ACLMessage.INFORM);
                 repairCompletedResponse.addReceiver(msg.getSender());
                 repairCompletedResponse.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
