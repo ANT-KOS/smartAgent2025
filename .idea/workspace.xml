@@ -165,7 +165,7 @@
       <workItem from="1748368770341" duration="88000" />
       <workItem from="1748381306290" duration="25000" />
       <workItem from="1748389018389" duration="3074000" />
-      <workItem from="1748437131440" duration="2511000" />
+      <workItem from="1748437131440" duration="3900000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -343,7 +343,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748440802034</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748440895370</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748440895370</updated>
+    </task>
+    <task id="LOCAL-00024" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748441844076</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748441844076</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

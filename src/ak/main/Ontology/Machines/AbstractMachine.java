@@ -50,6 +50,7 @@ public abstract class AbstractMachine implements Concept {
 
             if (success) {
                 System.out.println("Repair Success");
+                return;
             }
         }
 
