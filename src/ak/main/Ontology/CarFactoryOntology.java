@@ -21,6 +21,8 @@ public class CarFactoryOntology extends Ontology {
     public static final String MACHINE_RESPONSES = "machineResponse";
     public static final String MATERIAL_REQUEST = "materialRequest";
 
+    //In the ontology we need to list all objects and their properties that can be transmitted between agents
+    //so JADE can properly serialize and deserialize them.
     private CarFactoryOntology() {
         super(CAR_FACTORY_ONTOLOGY, BasicOntology.getInstance());
 

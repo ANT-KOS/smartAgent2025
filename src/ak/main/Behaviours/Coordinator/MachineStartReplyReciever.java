@@ -9,6 +9,7 @@ import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
+//This behaviour handles any start replies for the machines.
 public class MachineStartReplyReciever extends CyclicBehaviour {
     public MachineStartReplyReciever(CoordinatorAgent agent) {
         super(agent);

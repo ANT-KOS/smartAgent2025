@@ -12,6 +12,8 @@ import jade.lang.acl.ACLMessage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//Every machine will send their operating status periodically. The period is randomized in order to try to simulate
+//a real manufacturing environment
 public class MachineStatusSender extends TickerBehaviour {
     private final AID coordinatorAgent;
     private final AbstractMachine machine;

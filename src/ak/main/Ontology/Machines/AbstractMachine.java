@@ -11,17 +11,25 @@ public abstract class AbstractMachine implements Concept {
     protected ArrayList<MachineResponse> responses = new ArrayList<>();
     protected boolean stopped = false;
     public abstract MachineType getMachineType();
+    private int loopCounter = 3; //Machine errors should show up every 3 loops in order not to flood the system with errors.
 
     public ArrayList<MachineResponse> getMachineResponses() {
         ArrayList<MachineResponse> randomResponses = new ArrayList<>();
-        Random random = new Random();
-        randomResponses.add(responses.get(random.nextInt(responses.size()-1)));
+        if (loopCounter > 0) {
+            loopCounter--;
+        }
+
+        if (loopCounter == 0) {
+            Random random = new Random();
+            randomResponses.add(responses.get(random.nextInt(responses.size() - 1)));
+            loopCounter = 3;
+        }
+
         return randomResponses;
     }
 
     public void start() {
         stopped = false;
-        responses.clear();
     }
 
     public void stop() {
@@ -33,6 +41,7 @@ public abstract class AbstractMachine implements Concept {
     }
 
     public void repair() throws InterruptedException {
+        //Simulate a repair routine
         Random random = new Random();
         int maxAttempts = 5;
         for (int i = 0; i < maxAttempts -1; i++) {

@@ -82,6 +82,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
 
             System.out.println("Received maintenance request for machine: " + maintenanceRequestDto.getMachineType().getMachineName());
 
+            handleStopRequest(maintenanceRequestDto);
             ACLMessage response = new ACLMessage(ACLMessage.INFORM);
             response.addReceiver(repairRequestMessage.getSender());
             response.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
@@ -90,13 +91,13 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
             response.setReplyWith(conversationId);
             response.setContent("REPAIRS STARTED for machine: " + maintenanceRequestDto.getMachineType().getMachineName());
             myAgent.send(response);
-            handleStopRequest(maintenanceRequestDto);
 
             maintenanceRequestDto.getMachineType().getMachine().repair();
 
             myAgent.addBehaviour(new OneShotBehaviour(myAgent) {
                 @Override
                 public void action() {
+                    handleStartRequest(maintenanceRequestDto);
                     ACLMessage repairCompletedMessage = new ACLMessage(ACLMessage.INFORM);
                     repairCompletedMessage.addReceiver(repairRequestMessage.getSender());
                     repairCompletedMessage.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
@@ -106,7 +107,6 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
                     repairCompletedMessage.setReplyWith(repairRequestMessage.getConversationId());
                     myAgent.send(repairCompletedMessage);
                     System.out.println("Repair completed for machine: " +  maintenanceRequestDto.getMachineType().getMachineName());
-                    handleStartRequest(maintenanceRequestDto);
                 }
             });
         } catch (Exception e) {

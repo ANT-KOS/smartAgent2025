@@ -44,6 +44,9 @@ public class CoordinatorAgent extends Agent {
     }
 
     private AID[] queryMaintenanceAgents() {
+        //Get all maintenance agents dynamically. We can add as much maintenance agents as we want,
+        //and we could still see all of them
+
         DFAgentDescription template = new DFAgentDescription();
         ServiceDescription sd = new ServiceDescription();
         sd.setType("maintenance");
@@ -61,6 +64,7 @@ public class CoordinatorAgent extends Agent {
         }
     }
 
+    //The coordinator agent keeps a status of the machines and the maintenance availability
     public synchronized void markMaintenanceAgentAsUnavailable(AID maintenanceAgent) {
         unavailableMaintenanceAgents.add(maintenanceAgent);
         System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now unavailable.");
@@ -77,7 +81,7 @@ public class CoordinatorAgent extends Agent {
         return availableMaintenanceAgents;
     }
 
-    public synchronized List<AID> getMaintenanceAgents() {
+    public List<AID> getMaintenanceAgents() {
         return maintenanceAgents;
     }
 

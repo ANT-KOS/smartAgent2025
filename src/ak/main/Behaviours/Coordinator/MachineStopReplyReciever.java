@@ -7,6 +7,7 @@ import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
+//This behaviour handles any stop replies for the machines.
 public class MachineStopReplyReciever extends CyclicBehaviour {
     public MachineStopReplyReciever(CoordinatorAgent agent) {
         super(agent);

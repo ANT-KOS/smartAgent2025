@@ -19,6 +19,10 @@ import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
 
+//This behaviour checks the machine statuses and based on the machine responses the coordinator agent:
+//1. Will do nothing, or
+//2. Will check if there is any maintenance agent available and if there is they will send a repair request to them, or,
+//3. Will request supplies from the warehouse agent
 public class MachineStatusInspector extends CyclicBehaviour {
     public MachineStatusInspector(CoordinatorAgent agent) {
         super(agent);
@@ -82,6 +86,8 @@ public class MachineStatusInspector extends CyclicBehaviour {
         System.out.println("Order for: " + material + " has been sent");
     }
 
+    //We will make a call for proposal (CFP) in order to first determine if there is any maintenance agent available
+    //before sending a repair request.
     private void handleMaintenanceRequest(MachineType machineType, MachineResponse machineResponse) throws IOException {
         String conversationId = "maintenance-" + machineType.getMachineName() + "-" + System.currentTimeMillis();
 
@@ -92,9 +98,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
                 .setMachineType(machineType)
                 .setMachineResponse(machineResponse));
         repairCFP.setConversationId(conversationId);
-        for (AID maintenanceAgents : ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents()) {
-            repairCFP.addReceiver(maintenanceAgents);
-        }
+        repairCFP.addReceiver(((CoordinatorAgent) myAgent).getMaintenanceAgents().getFirst());
         repairCFP.setReplyWith("repairCfp" + System.currentTimeMillis());
         System.out.println("Maintenance CFP for: " + machineType + " has been sent");
 

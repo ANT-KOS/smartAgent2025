@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
+//This behaviour handles the proposals or refusals of the CFP messages between the coordinator and the maintenance agents.
 public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator {
     private MachineType machineType;
     private MachineResponse machineResponse;
@@ -56,9 +57,13 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
             List<AID> availableMaintenanceAgents = ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents();
 
             if (!availableMaintenanceAgents.isEmpty()) {
+                //If the maintenance agent we asked for a proposal is not available then we will check the
+                //next available agent.
                 sendNewCfpToNextAgent(availableMaintenanceAgents);
             } else {
                 System.out.println("No maintenance agents are available at the moment.");
+                //If there are no maintenance agents available then the coordinator agent will check again in 10 seconds.
+                //They will keep doing so until they find a maintenance agent that is available.
                 myAgent.addBehaviour(new WakerBehaviour(myAgent, 10000) {
                     protected void onWake() {
                         try {

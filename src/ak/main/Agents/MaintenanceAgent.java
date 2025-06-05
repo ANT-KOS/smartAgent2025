@@ -14,6 +14,11 @@ public class MaintenanceAgent extends Agent {
     protected void setup() {
         getContentManager().registerLanguage(new SLCodec());
         getContentManager().registerOntology(CarFactoryOntology.ontologyInstance);
+
+        //We add the agent and service descriptions in order to add the maintenance agents
+        //in a category in the DF service. This is done so we can search for all maintenance
+        //agents in the coordinator agent
+
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
 

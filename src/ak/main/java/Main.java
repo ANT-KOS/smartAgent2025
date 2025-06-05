@@ -32,6 +32,7 @@ public class Main {
 
             AgentContainer container = runtime.createMainContainer(profile);
 
+            //We create as many machine agents as there are machineClasses
             for (Class<?> machineClass : machineClasses) {
                 AbstractMachine machine = (AbstractMachine) machineClass.getDeclaredConstructor().newInstance();
                 String agentName = AgentNames.MACHINE_AGENT.getAgentName(machine.getMachineType().getMachineName());
@@ -39,8 +40,10 @@ public class Main {
                 container.createNewAgent(agentName, MachineAgent.class.getName(), new Object[]{machine}).start();
             }
 
+            //We create 2 maintenance agents in order to make the simulation more complex
             container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName() + "_Maintenance-1", MaintenanceAgent.class.getName(), null).start();
             container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName() + "_Maintenance-2", MaintenanceAgent.class.getName(), null).start();
+
             container.createNewAgent(AgentNames.WAREHOUSE_AGENT.getAgentName(), WarehouseAgent.class.getName(), null).start();
             container.createNewAgent(AgentNames.COORDINATOR_AGENT.getAgentName(), CoordinatorAgent.class.getName(), null).start();
 

@@ -8,6 +8,7 @@ import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
+//This behaviour handles any start requests for the machines.
 public class MachineStartRequestReciever extends CyclicBehaviour {
     AbstractMachine machine;
     public MachineStartRequestReciever(Agent a, AbstractMachine machine) {

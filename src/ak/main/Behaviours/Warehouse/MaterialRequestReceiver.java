@@ -14,6 +14,7 @@ import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
 
+//This behaviour handles material requests
 public class MaterialRequestReceiver extends CyclicBehaviour {
     public MaterialRequestReceiver(Agent a) {
         super(a);
