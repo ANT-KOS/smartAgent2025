@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Constants/MachineStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarAssemblyMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarAssemblyMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRepairContractNetInitiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRepairContractNetInitiator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +174,7 @@
       <workItem from="1748437131440" duration="13106000" />
       <workItem from="1748984052821" duration="1801000" />
       <workItem from="1749066415022" duration="5085000" />
-      <workItem from="1749137702231" duration="18474000" />
+      <workItem from="1749137702231" duration="19478000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -406,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749159697077</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1749161130715</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1749161130715</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -77,7 +77,6 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     private void sendRepairRequest(AID maintenanceAgent) throws IOException {

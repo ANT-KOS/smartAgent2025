@@ -34,12 +34,12 @@ public class CoordinatorAgent extends Agent {
         addBehaviour(new MaintenanceResponseReceiver(this));
     }
 
-    public void changeMachineStatus(MachineType machineType, MachineStatus newStatus) {
+    public synchronized void changeMachineStatus(MachineType machineType, MachineStatus newStatus) {
         machineStatusPerMachine.compute(machineType, (k, v) -> newStatus);
         System.out.println(machineStatusPerMachine);
     }
 
-    public MachineStatus getMachineStatus(MachineType machineType) {
+    public synchronized MachineStatus getMachineStatus(MachineType machineType) {
         return machineStatusPerMachine.get(machineType);
     }
 
@@ -61,27 +61,27 @@ public class CoordinatorAgent extends Agent {
         }
     }
 
-    public void markMaintenanceAgentAsUnavailable(AID maintenanceAgent) {
+    public synchronized void markMaintenanceAgentAsUnavailable(AID maintenanceAgent) {
         unavailableMaintenanceAgents.add(maintenanceAgent);
         System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now unavailable.");
     }
 
-    public void markMaintenanceAgentAsAvailable(AID maintenanceAgent) {
+    public synchronized void markMaintenanceAgentAsAvailable(AID maintenanceAgent) {
         unavailableMaintenanceAgents.remove(maintenanceAgent);
         System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now available.");
     }
 
-    public List<AID> getAvailableMaintenanceAgents() {
+    public synchronized List<AID> getAvailableMaintenanceAgents() {
         ArrayList<AID> availableMaintenanceAgents = new ArrayList<>(maintenanceAgents);
         availableMaintenanceAgents.removeAll(unavailableMaintenanceAgents);
         return availableMaintenanceAgents;
     }
 
-    public List<AID> getMaintenanceAgents() {
+    public synchronized List<AID> getMaintenanceAgents() {
         return maintenanceAgents;
     }
 
-    public void notifyRepairCompleted(AID agent) {
+    public synchronized void notifyRepairCompleted(AID agent) {
         markMaintenanceAgentAsAvailable(agent);
     }
 }
