@@ -58,8 +58,6 @@ public class MachineStatusInspector extends CyclicBehaviour {
                                  MachineResponse.MALFUNCTIONING_PRESS,
                                  MachineResponse.SERVO_MALFUNCTION ->
                                     handleMaintenanceRequest(machineResponseDto.getMachineType(), m);
-                            case MachineResponse.MACHINE_STOPPED ->
-                                    ((CoordinatorAgent) myAgent).changeMachineStatus(machineResponseDto.getMachineType(), MachineStatus.STOPPED);
                         }
                     }
                 } else {
