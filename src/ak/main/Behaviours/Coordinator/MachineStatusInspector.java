@@ -98,6 +98,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
             repairCFP.addReceiver(maintenanceAgents);
         }
         repairCFP.setReplyWith("repairCfp" + System.currentTimeMillis());
+        System.out.println("Maintenance CFP for: " + machineType + " has been sent");
 
         myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCFP, machineType, machineResponse));
     }

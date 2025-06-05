@@ -8,10 +8,10 @@ import java.util.Arrays;
 public class CarInteriorChassisMachine extends AbstractMachine{
     public CarInteriorChassisMachine() {
         responses.addAll(Arrays.asList(
-                //MachineResponse.NO_PLASTIC,
+                MachineResponse.NO_PLASTIC,
                 MachineResponse.LOW_FURNACE_TEMP,
                 MachineResponse.MALFUNCTIONING_PRESS,
-                //MachineResponse.PLASTIC_LEVEL_LOW,
+                MachineResponse.PLASTIC_LEVEL_LOW,
                 MachineResponse.CAR_INTERIOR_CHASSIS_BOX_CAPACITY_FULL,
                 MachineResponse.MACHINE_STOPPED
         ));

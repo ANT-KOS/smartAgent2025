@@ -9,7 +9,8 @@ import ak.main.Ontology.Machines.AbstractMachine;
 import jade.content.lang.sl.SLCodec;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.ParallelBehaviour;
+
+import java.util.Random;
 
 public class MachineAgent extends Agent {
     @Override
@@ -20,14 +21,11 @@ public class MachineAgent extends Agent {
 
         Object[] args = getArguments();
         if (args != null && args.length > 0 && args[0] instanceof AbstractMachine machine) {
-            ParallelBehaviour parallelBehaviour = new ParallelBehaviour();
+            Random random = new Random();
 
-
-            parallelBehaviour.addSubBehaviour(new MachineStatusSender(this, machine, coordinatorAgent));
-            parallelBehaviour.addSubBehaviour(new MachineStartRequestReciever(this, machine));
-            parallelBehaviour.addSubBehaviour(new MachineStopRequestReciever(this, machine));
-
-            addBehaviour(parallelBehaviour);
+            addBehaviour(new MachineStatusSender(this, machine, coordinatorAgent, 7000 + (random.nextInt(6) * 1000)));
+            addBehaviour(new MachineStartRequestReciever(this, machine));
+            addBehaviour(new MachineStopRequestReciever(this, machine));
         } else {
             System.out.println("No argument supplied to " + this.getAID());
             doDelete();

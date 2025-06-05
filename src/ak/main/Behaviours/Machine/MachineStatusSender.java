@@ -16,8 +16,8 @@ public class MachineStatusSender extends TickerBehaviour {
     private final AID coordinatorAgent;
     private final AbstractMachine machine;
 
-    public MachineStatusSender(Agent a, AbstractMachine machine, AID coordinatorAgent) {
-        super(a, 5000);
+    public MachineStatusSender(Agent a, AbstractMachine machine, AID coordinatorAgent, int period) {
+        super(a, period);
         this.coordinatorAgent = coordinatorAgent;
         this.machine = machine;
     }

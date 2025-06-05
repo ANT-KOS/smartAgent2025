@@ -7,6 +7,7 @@ import ak.main.Ontology.Constants.MachineType;
 import ak.main.Ontology.Dto.MaintenanceRequestDto;
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
 import jade.domain.FIPANames;
 import jade.lang.acl.ACLMessage;
 import jade.proto.ContractNetInitiator;
@@ -18,6 +19,7 @@ import java.util.Vector;
 public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator {
     private MachineType machineType;
     private MachineResponse machineResponse;
+    private ACLMessage repairCfp;
 
     public MaintenanceRepairContractNetInitiator(
             Agent agent,
@@ -27,6 +29,7 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
         super(agent, repairCfp);
         this.machineType = machineType;
         this.machineResponse = machineResponse;
+        this.repairCfp = repairCfp;
     }
 
     protected void handlePropose(ACLMessage propose, Vector proposals) {
@@ -55,8 +58,21 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
             if (!availableMaintenanceAgents.isEmpty()) {
                 sendNewCfpToNextAgent(availableMaintenanceAgents);
             } else {
-                System.out.println("No maintenance agents are available at the moment. Waiting...");
-                block();
+                System.out.println("No maintenance agents are available at the moment.");
+                myAgent.addBehaviour(new WakerBehaviour(myAgent, 10000) {
+                    protected void onWake() {
+                        try {
+                            List<AID> agents = ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents();
+                            if (!agents.isEmpty()) {
+                                myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCfp, machineType, machineResponse));
+                            } else {
+                                System.out.println("Still no agents available.");
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +96,7 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
     }
 
     private void sendNewCfpToNextAgent(List<AID> availableAgents) {
-        AID nextAgent = availableAgents.getFirst(); // In a real scenario, you could implement a round-robin or another selection strategy
+        AID nextAgent = availableAgents.getFirst();
         ACLMessage cfp = new ACLMessage(ACLMessage.CFP);
         cfp.addReceiver(nextAgent);
         cfp.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);

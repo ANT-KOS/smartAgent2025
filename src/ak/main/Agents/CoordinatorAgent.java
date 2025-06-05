@@ -10,7 +10,6 @@ import ak.main.Ontology.Constants.MachineType;
 import jade.content.lang.sl.SLCodec;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.ParallelBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
@@ -29,14 +28,10 @@ public class CoordinatorAgent extends Agent {
         getContentManager().registerOntology(CarFactoryOntology.ontologyInstance);
         maintenanceAgents = Arrays.asList(queryMaintenanceAgents());
 
-        ParallelBehaviour parallelBehaviour = new ParallelBehaviour(this, ParallelBehaviour.WHEN_ALL);
-
-        parallelBehaviour.addSubBehaviour(new MachineStartReplyReciever(this));
-        parallelBehaviour.addSubBehaviour(new MachineStopReplyReciever(this));
-        parallelBehaviour.addSubBehaviour(new MachineStatusInspector(this));
-        parallelBehaviour.addSubBehaviour(new MaintenanceResponseReceiver(this));
-
-        addBehaviour(parallelBehaviour);
+        addBehaviour(new MachineStartReplyReciever(this));
+        addBehaviour(new MachineStopReplyReciever(this));
+        addBehaviour(new MachineStatusInspector(this));
+        addBehaviour(new MaintenanceResponseReceiver(this));
     }
 
     public void changeMachineStatus(MachineType machineType, MachineStatus newStatus) {

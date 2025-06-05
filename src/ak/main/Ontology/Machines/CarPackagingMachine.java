@@ -8,8 +8,8 @@ import java.util.Arrays;
 public class CarPackagingMachine extends AbstractMachine {
     public CarPackagingMachine() {
         responses.addAll(Arrays.asList(
-                //MachineResponse.PACKAGING_MATERIAL_EMPTY,
-                //MachineResponse.PACKAGING_MATERIAL_LOW,
+                MachineResponse.PACKAGING_MATERIAL_EMPTY,
+                MachineResponse.PACKAGING_MATERIAL_LOW,
                 MachineResponse.PACKAGING_JAM,
                 MachineResponse.MACHINE_STOPPED
         ));

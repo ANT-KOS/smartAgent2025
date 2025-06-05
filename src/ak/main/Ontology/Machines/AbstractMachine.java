@@ -11,15 +11,13 @@ public abstract class AbstractMachine implements Concept {
     protected ArrayList<MachineResponse> responses = new ArrayList<>();
     protected boolean stopped = false;
     public abstract MachineType getMachineType();
-    private int loopCounter = 0;
 
     public ArrayList<MachineResponse> getMachineResponses() {
         ArrayList<MachineResponse> randomResponses = new ArrayList<>();
-        if (loopCounter == 0 && !stopped) {
+        if (!stopped) {
 
             Random random = new Random();
-            randomResponses.add(responses.get(1));
-            loopCounter = 0;
+            randomResponses.add(responses.get(random.nextInt(responses.size()-1)));
         }
 
         if (stopped) {
@@ -27,7 +25,6 @@ public abstract class AbstractMachine implements Concept {
             stoppedResponse.add(MachineResponse.MACHINE_STOPPED);
             return stoppedResponse;
         }
-        loopCounter--;
 
         return randomResponses;
     }
@@ -57,7 +54,8 @@ public abstract class AbstractMachine implements Concept {
                 return;
             }
         }
-        wait(10000);
+
+        Thread.sleep(2000);
 
         System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
     }

@@ -59,7 +59,6 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
                 myAgent.addBehaviour(new OneShotBehaviour(myAgent) {
                     @Override
                     public void action() {
-                        // After repair, mark the agent as available
                         busyRepairing = false;
                         System.out.println("Repair completed. The agent is now available again.");
                     }
@@ -102,10 +101,11 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
                     repairCompletedMessage.addReceiver(repairRequestMessage.getSender());
                     repairCompletedMessage.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
                     repairCompletedMessage.setLanguage(FIPANames.ContentLanguage.FIPA_SL);
-                    repairCompletedMessage.setContent("REPAIRED for machine: " + maintenanceRequestDto.getMachineType().getMachineName());
+                    repairCompletedMessage.setContent("REPAIRED machine: " + maintenanceRequestDto.getMachineType().getMachineName());
                     repairCompletedMessage.setConversationId(repairRequestMessage.getConversationId());
+                    repairCompletedMessage.setReplyWith(repairRequestMessage.getConversationId());
                     myAgent.send(repairCompletedMessage);
-                    System.out.println("Repair completed for machine.");
+                    System.out.println("Repair completed for machine: " +  maintenanceRequestDto.getMachineType().getMachineName());
                     handleStartRequest(maintenanceRequestDto);
                 }
             });

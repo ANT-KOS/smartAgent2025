@@ -53,6 +53,8 @@ public class MaintenanceResponseReceiver extends CyclicBehaviour {
                         }
                     }
                 }
+            } else {
+                block();
             }
         } else {
             block();

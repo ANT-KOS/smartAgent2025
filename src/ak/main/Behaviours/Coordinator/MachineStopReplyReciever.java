@@ -17,10 +17,12 @@ public class MachineStopReplyReciever extends CyclicBehaviour {
         MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
 
         ACLMessage msg = myAgent.receive(mt);
-        if (msg != null && msg.getContent().contains("stopped")) {
-            String machineName = extractMachineName(msg.getContent());
-            MachineType machineType = MachineType.fromValue(machineName);
-            ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.STOPPED);
+        if (msg != null) {
+            if ( msg.getContent().contains("stopped")) {
+                String machineName = extractMachineName(msg.getContent());
+                MachineType machineType = MachineType.fromValue(machineName);
+                ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.STOPPED);
+            }
         } else {
             block();
         }
