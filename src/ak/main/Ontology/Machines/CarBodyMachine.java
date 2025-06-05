@@ -12,8 +12,7 @@ public class CarBodyMachine extends AbstractMachine{
                 MachineResponse.CAR_BODY_BOX_CAPACITY_FULL,
                 MachineResponse.LOW_FURNACE_TEMP,
                 MachineResponse.MALFUNCTIONING_PRESS,
-                MachineResponse.NO_ALUMINIUM,
-                MachineResponse.MACHINE_STOPPED
+                MachineResponse.NO_ALUMINIUM
         ));
     }
 

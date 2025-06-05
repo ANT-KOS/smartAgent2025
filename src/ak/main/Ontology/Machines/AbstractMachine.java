@@ -14,18 +14,8 @@ public abstract class AbstractMachine implements Concept {
 
     public ArrayList<MachineResponse> getMachineResponses() {
         ArrayList<MachineResponse> randomResponses = new ArrayList<>();
-        if (!stopped) {
-
-            Random random = new Random();
-            randomResponses.add(responses.get(random.nextInt(responses.size()-1)));
-        }
-
-        if (stopped) {
-            ArrayList<MachineResponse> stoppedResponse = new ArrayList<>();
-            stoppedResponse.add(MachineResponse.MACHINE_STOPPED);
-            return stoppedResponse;
-        }
-
+        Random random = new Random();
+        randomResponses.add(responses.get(random.nextInt(responses.size()-1)));
         return randomResponses;
     }
 

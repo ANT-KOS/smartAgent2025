@@ -11,8 +11,7 @@ public class CarAssemblyMachine extends AbstractMachine{
                 MachineResponse.CAR_WHEEL_BOX_CAPACITY_EMPTY,
                 MachineResponse.CAR_INTERIOR_CHASSIS_BOX_CAPACITY_EMPTY,
                 MachineResponse.CAR_BODY_BOX_CAPACITY_EMPTY,
-                MachineResponse.SERVO_MALFUNCTION,
-                MachineResponse.MACHINE_STOPPED
+                MachineResponse.SERVO_MALFUNCTION
         ));
     }
 

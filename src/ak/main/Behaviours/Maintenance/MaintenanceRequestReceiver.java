@@ -115,6 +115,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
     }
 
     private void handleStopRequest(MaintenanceRequestDto maintenanceRequestDto) {
+        sendStopRequest(maintenanceRequestDto.getMachineType());
         switch (maintenanceRequestDto.getMachineResponse()) {
             case PAINT_NOZZLE_BLOCKED -> {
                 sendStopRequest(MachineType.CAR_ASSEMBLY);
@@ -135,6 +136,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
     }
 
     private void handleStartRequest(MaintenanceRequestDto maintenanceRequestDto) {
+        sendStartRequest(maintenanceRequestDto.getMachineType());
         switch (maintenanceRequestDto.getMachineResponse()) {
             case PAINT_NOZZLE_BLOCKED -> {
                 sendStartRequest(MachineType.CAR_ASSEMBLY);

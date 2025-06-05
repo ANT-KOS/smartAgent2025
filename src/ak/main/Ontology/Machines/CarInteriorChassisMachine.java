@@ -12,8 +12,7 @@ public class CarInteriorChassisMachine extends AbstractMachine{
                 MachineResponse.LOW_FURNACE_TEMP,
                 MachineResponse.MALFUNCTIONING_PRESS,
                 MachineResponse.PLASTIC_LEVEL_LOW,
-                MachineResponse.CAR_INTERIOR_CHASSIS_BOX_CAPACITY_FULL,
-                MachineResponse.MACHINE_STOPPED
+                MachineResponse.CAR_INTERIOR_CHASSIS_BOX_CAPACITY_FULL
         ));
     }
 
