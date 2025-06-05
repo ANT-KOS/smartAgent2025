@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Warehouse;
 
 import ak.main.Agents.Constants.AgentNames;
 import ak.main.Ontology.Constants.MachineResponse;
@@ -51,6 +51,8 @@ public class MaterialRequestReceiver extends CyclicBehaviour {
             } catch (UnreadableException | IOException e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            block();
         }
     }
 }

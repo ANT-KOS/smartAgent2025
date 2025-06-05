@@ -9,8 +9,8 @@ public class CarPaintMachine extends AbstractMachine {
     public CarPaintMachine() {
         responses.addAll(Arrays.asList(
                 MachineResponse.PAINT_NOZZLE_BLOCKED,
-                MachineResponse.NO_PAINT,
-                MachineResponse.PAINT_LEVEL_LOW,
+                //MachineResponse.NO_PAINT,
+                //MachineResponse.PAINT_LEVEL_LOW,
                 MachineResponse.MACHINE_STOPPED
         ));
     }

@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Coordinator;
 
 import ak.main.Agents.CoordinatorAgent;
 import ak.main.Ontology.Constants.MachineStatus;
@@ -21,7 +21,6 @@ public class MachineStopReplyReciever extends CyclicBehaviour {
             String machineName = extractMachineName(msg.getContent());
             MachineType machineType = MachineType.fromValue(machineName);
             ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.STOPPED);
-            System.out.println("FFEWFWEFWEFWEFWEFWEFWEWEEW");
         } else {
             block();
         }

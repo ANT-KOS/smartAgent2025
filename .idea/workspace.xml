@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="WIP: Fixes, debug">
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRepairContractNetInitiator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Dto/MachineResponsesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/Constants/AgentNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/Constants/AgentNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MachineAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/MaintenanceAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/WarehouseAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/WarehouseAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStartReplyReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Machine/MachineStartRequestReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Machine/MachineStatusSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStopReplyReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopRequestReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Machine/MachineStopRequestReciever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceRequestReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaintenanceResponseReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceResponseReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/MaterialRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Warehouse/MaterialRequestReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarBodyMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarInteriorChassisMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPackagingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarPaintMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/CarWheelMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,8 +159,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
       </set>
     </attachedChunks>
   </component>
@@ -169,7 +191,10 @@
       <workItem from="1748368770341" duration="88000" />
       <workItem from="1748381306290" duration="25000" />
       <workItem from="1748389018389" duration="3074000" />
-      <workItem from="1748437131440" duration="8635000" />
+      <workItem from="1748437131440" duration="13106000" />
+      <workItem from="1748984052821" duration="1801000" />
+      <workItem from="1749066415022" duration="5085000" />
+      <workItem from="1749137702231" duration="12985000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -371,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748443651875</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="WIP: Fixes, debug">
+      <option name="closed" value="true" />
+      <created>1748450188700</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1748450188700</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,29 +444,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceResponseReceiver.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/gitlab/jade-project/jade/master/jade-master-sources.jar!/jade/gui/AgentTree.java</url>
-          <line>961</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStopReplyReciever.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="33" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStartRequestReciever.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/MachineStatusInspector.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

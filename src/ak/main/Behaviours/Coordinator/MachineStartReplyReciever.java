@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Coordinator;
 
 import ak.main.Agents.Constants.AgentNames;
 import ak.main.Agents.CoordinatorAgent;

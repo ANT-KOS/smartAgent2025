@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Machine;
 
 import ak.main.Agents.Constants.AgentNames;
 import ak.main.Ontology.Machines.AbstractMachine;

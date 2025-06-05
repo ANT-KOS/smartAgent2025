@@ -12,8 +12,8 @@ public enum AgentNames {
         this.agentName = agentName;
     }
 
-    public String getAgentName(String machineName) {
-        return agentName + "_" + machineName;
+    public String getAgentName(String agentSubname) {
+        return agentName + "_" + agentSubname;
     }
 
     public String getAgentName() {

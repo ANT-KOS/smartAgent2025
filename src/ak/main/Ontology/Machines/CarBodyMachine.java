@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class CarBodyMachine extends AbstractMachine{
     public CarBodyMachine() {
         responses.addAll(Arrays.asList(
-                MachineResponse.ALUMINIUM_LEVEL_LOW,
+                //MachineResponse.ALUMINIUM_LEVEL_LOW,
                 MachineResponse.CAR_BODY_BOX_CAPACITY_FULL,
                 MachineResponse.LOW_FURNACE_TEMP,
                 MachineResponse.MALFUNCTIONING_PRESS,

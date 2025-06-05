@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Machine;
 
 import ak.main.Ontology.CarFactoryOntology;
 import ak.main.Ontology.Constants.MachineResponse;
@@ -26,7 +26,7 @@ public class MachineStatusSender extends TickerBehaviour {
         try {
             ArrayList<MachineResponse> machineResponse = machine.getMachineResponses();
 
-            if (!machineResponse.isEmpty()) {
+            if (!machine.isStopped()) {
                 ACLMessage machineStatus = new ACLMessage(ACLMessage.INFORM);
                 machineStatus.addReceiver(coordinatorAgent);
                 machineStatus.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
@@ -34,9 +34,6 @@ public class MachineStatusSender extends TickerBehaviour {
                         .setMachineResponses(machineResponse)
                         .setMachineType(machine.getMachineType()));
                 myAgent.send(machineStatus);
-                System.out.println("Machine status sent to " + coordinatorAgent);
-                System.out.println("MACHINE: " + machine.getMachineType());
-                System.out.println("STATUS: " + machineResponse);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

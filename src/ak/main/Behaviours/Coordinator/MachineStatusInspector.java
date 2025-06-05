@@ -1,4 +1,4 @@
-package ak.main.Behaviours;
+package ak.main.Behaviours.Coordinator;
 
 import ak.main.Agents.Constants.AgentNames;
 import ak.main.Agents.CoordinatorAgent;
@@ -56,10 +56,14 @@ public class MachineStatusInspector extends CyclicBehaviour {
                                  MachineResponse.PAINT_NOZZLE_BLOCKED,
                                  MachineResponse.PACKAGING_JAM,
                                  MachineResponse.MALFUNCTIONING_PRESS,
-                                 MachineResponse.SERVO_MALFUNCTION
-                                 -> handleMaintenanceRequest(machineResponseDto.getMachineType(), m);
+                                 MachineResponse.SERVO_MALFUNCTION ->
+                                    handleMaintenanceRequest(machineResponseDto.getMachineType(), m);
+                            case MachineResponse.MACHINE_STOPPED ->
+                                    ((CoordinatorAgent) myAgent).changeMachineStatus(machineResponseDto.getMachineType(), MachineStatus.STOPPED);
                         }
                     }
+                } else {
+                    ((CoordinatorAgent) myAgent).changeMachineStatus(machineResponseDto.getMachineType(), MachineStatus.OPERATING);
                 }
             } catch (UnreadableException | IOException e) {
                 throw new RuntimeException(e);
@@ -83,18 +87,18 @@ public class MachineStatusInspector extends CyclicBehaviour {
     private void handleMaintenanceRequest(MachineType machineType, MachineResponse machineResponse) throws IOException {
         String conversationId = "maintenance-" + machineType.getMachineName() + "-" + System.currentTimeMillis();
 
-        ACLMessage maintenanceRequest = new ACLMessage(ACLMessage.REQUEST);
-        maintenanceRequest.addReceiver(new AID(AgentNames.MAINTENANCE_AGENT.getAgentName(), AID.ISLOCALNAME));
-        maintenanceRequest.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
-        maintenanceRequest.setLanguage(FIPANames.ContentLanguage.FIPA_SL);
-        maintenanceRequest.setContentObject(new MaintenanceRequestDto()
+        ACLMessage repairCFP = new ACLMessage(ACLMessage.CFP);
+        repairCFP.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
+        repairCFP.setLanguage(FIPANames.ContentLanguage.FIPA_SL);
+        repairCFP.setContentObject(new MaintenanceRequestDto()
                 .setMachineType(machineType)
                 .setMachineResponse(machineResponse));
-        maintenanceRequest.setConversationId(conversationId);
-        maintenanceRequest.setReplyWith(conversationId);
-        myAgent.send(maintenanceRequest);
+        repairCFP.setConversationId(conversationId);
+        for (AID maintenanceAgents : ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents()) {
+            repairCFP.addReceiver(maintenanceAgents);
+        }
+        repairCFP.setReplyWith("repairCfp" + System.currentTimeMillis());
 
-        ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.FAULTY);
-        System.out.println("Maintenance request for: " + machineType + " has been sent");
+        myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCFP, machineType, machineResponse));
     }
 }

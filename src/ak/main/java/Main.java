@@ -39,9 +39,11 @@ public class Main {
                 container.createNewAgent(agentName, MachineAgent.class.getName(), new Object[]{machine}).start();
             }
 
-            container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName(), MaintenanceAgent.class.getName(), null).start();
-            container.createNewAgent(AgentNames.COORDINATOR_AGENT.getAgentName(), CoordinatorAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName() + "_Maintenance-1", MaintenanceAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.MAINTENANCE_AGENT.getAgentName() + "_Maintenance-2", MaintenanceAgent.class.getName(), null).start();
             container.createNewAgent(AgentNames.WAREHOUSE_AGENT.getAgentName(), WarehouseAgent.class.getName(), null).start();
+            container.createNewAgent(AgentNames.COORDINATOR_AGENT.getAgentName(), CoordinatorAgent.class.getName(), null).start();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

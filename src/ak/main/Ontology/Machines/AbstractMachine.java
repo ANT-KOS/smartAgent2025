@@ -11,16 +11,15 @@ public abstract class AbstractMachine implements Concept {
     protected ArrayList<MachineResponse> responses = new ArrayList<>();
     protected boolean stopped = false;
     public abstract MachineType getMachineType();
+    private int loopCounter = 0;
 
     public ArrayList<MachineResponse> getMachineResponses() {
-        double selectionProbability = 0.1;
-        Random random = new Random();
-
         ArrayList<MachineResponse> randomResponses = new ArrayList<>();
-        for (MachineResponse r : responses) {
-            if (random.nextDouble() < selectionProbability && !r.equals(MachineResponse.MACHINE_STOPPED)) {
-                randomResponses.add(r);
-            }
+        if (loopCounter == 0 && !stopped) {
+
+            Random random = new Random();
+            randomResponses.add(responses.get(1));
+            loopCounter = 0;
         }
 
         if (stopped) {
@@ -28,6 +27,7 @@ public abstract class AbstractMachine implements Concept {
             stoppedResponse.add(MachineResponse.MACHINE_STOPPED);
             return stoppedResponse;
         }
+        loopCounter--;
 
         return randomResponses;
     }
@@ -41,7 +41,11 @@ public abstract class AbstractMachine implements Concept {
         stopped = true;
     }
 
-    public void repair() {
+    public boolean isStopped() {
+        return stopped;
+    }
+
+    public void repair() throws InterruptedException {
         Random random = new Random();
         int maxAttempts = 5;
         for (int i = 0; i < maxAttempts -1; i++) {
@@ -53,6 +57,7 @@ public abstract class AbstractMachine implements Concept {
                 return;
             }
         }
+        wait(10000);
 
         System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
     }

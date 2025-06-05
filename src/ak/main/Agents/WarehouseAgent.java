@@ -1,6 +1,6 @@
 package ak.main.Agents;
 
-import ak.main.Behaviours.MaterialRequestReceiver;
+import ak.main.Behaviours.Warehouse.MaterialRequestReceiver;
 import ak.main.Ontology.CarFactoryOntology;
 import jade.content.lang.sl.SLCodec;
 import jade.core.Agent;
