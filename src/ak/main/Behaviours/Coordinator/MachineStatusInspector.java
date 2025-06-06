@@ -141,8 +141,8 @@ public class MachineStatusInspector extends CyclicBehaviour {
         if (availableMaintenanceAgents == null || availableMaintenanceAgents.isEmpty()) {
             if (!isRetryScheduled) {
                 isRetryScheduled = true;
-                // If no agents are still available, retry after 5 seconds
-                myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
+                // If no agents are still available, retry after 10 seconds
+                myAgent.addBehaviour(new WakerBehaviour(myAgent, 10000) {
                     @Override
                     protected void onWake() {
                         try {
@@ -169,7 +169,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
 
         if (!maintenanceRequestQueue.isEmpty() && !isRetryScheduled) {
             isRetryScheduled = true;
-            myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
+            myAgent.addBehaviour(new WakerBehaviour(myAgent, 10000) {
                 @Override
                 protected void onWake() {
                     isRetryScheduled = false;
