@@ -7,7 +7,6 @@ import ak.main.Ontology.Constants.MachineType;
 import ak.main.Ontology.Dto.MaintenanceRequestDto;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.WakerBehaviour;
 import jade.domain.FIPANames;
 import jade.lang.acl.ACLMessage;
 import jade.proto.ContractNetInitiator;
@@ -61,23 +60,7 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
                 //next available agent.
                 sendNewCfpToNextAgent(availableMaintenanceAgents);
             } else {
-                System.out.println("No maintenance agents are available at the moment.");
-                //If there are no maintenance agents available then the coordinator agent will check again in 10 seconds.
-                //They will keep doing so until they find a maintenance agent that is available.
-                myAgent.addBehaviour(new WakerBehaviour(myAgent, 10000) {
-                    protected void onWake() {
-                        try {
-                            List<AID> agents = ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents();
-                            if (!agents.isEmpty()) {
-                                myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCfp, machineType, machineResponse));
-                            } else {
-                                System.out.println("Still no agents available.");
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+                block();
             }
         } catch (Exception e) {
             e.printStackTrace();
