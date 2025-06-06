@@ -12,12 +12,15 @@ import ak.main.Ontology.Dto.MaintenanceRequestDto;
 import ak.main.Ontology.Orders.MaterialRequest;
 import jade.core.AID;
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.WakerBehaviour;
 import jade.domain.FIPANames;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 //This behaviour checks the machine statuses and based on the machine responses the coordinator agent:
 //1. Will do nothing, or
@@ -88,7 +91,27 @@ public class MachineStatusInspector extends CyclicBehaviour {
 
     //We will make a call for proposal (CFP) in order to first determine if there is any maintenance agent available
     //before sending a repair request.
-    private void handleMaintenanceRequest(MachineType machineType, MachineResponse machineResponse) throws IOException {
+    public void handleMaintenanceRequest(MachineType machineType, MachineResponse machineResponse) throws IOException {
+        List<AID> availableMaintenanceAgents = ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents();
+
+        if (availableMaintenanceAgents.isEmpty()) {
+            MaintenanceRetryManager.queueRequest(new MaintenanceRequestDto()
+                    .setMachineType(machineType)
+                    .setMachineType(machineType));
+
+
+            myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
+                @Override
+                protected void onWake() {
+                    // After 5 seconds, retry the request
+                    System.out.println("[Maintenance] Retrying maintenance for: " + machineType);
+                    myAgent.addBehaviour(new MachineStatusInspector((CoordinatorAgent) myAgent));
+                }
+            });
+
+            return;
+        }
+
         String conversationId = "maintenance-" + machineType.getMachineName() + "-" + System.currentTimeMillis();
 
         ACLMessage repairCFP = new ACLMessage(ACLMessage.CFP);
@@ -98,10 +121,40 @@ public class MachineStatusInspector extends CyclicBehaviour {
                 .setMachineType(machineType)
                 .setMachineResponse(machineResponse));
         repairCFP.setConversationId(conversationId);
-        repairCFP.addReceiver(((CoordinatorAgent) myAgent).getMaintenanceAgents().getFirst());
+        repairCFP.addReceiver(availableMaintenanceAgents.getFirst());
         repairCFP.setReplyWith("repairCfp" + System.currentTimeMillis());
         System.out.println("Maintenance CFP for: " + machineType + " has been sent");
 
         myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCFP, machineType, machineResponse));
+    }
+
+    public class MaintenanceRetryManager {
+
+        private static List<MaintenanceRequestDto> retryQueue = new ArrayList<>();
+
+        // Adds a request to the retry queue
+        public static void queueRequest(MaintenanceRequestDto requestDto) {
+            retryQueue.add(requestDto);
+        }
+
+        // Process and retry maintenance requests from the queue
+        public static void processRetryQueue() {
+            List<MaintenanceRequestDto> toRetry = new ArrayList<>();
+
+            for (MaintenanceRequestDto requestDto : retryQueue) {
+                // Always retry since there's no max retries
+                toRetry.add(requestDto);
+            }
+
+            // Clear the retry queue and re-add the requests for retrying
+            retryQueue.clear();
+            retryQueue.addAll(toRetry);
+        }
+
+        // You can periodically call this method to process the retry queue
+        public static void retryAll() {
+            // Call this from a behaviour to retry all failed maintenance requests
+            processRetryQueue();
+        }
     }
 }

@@ -94,7 +94,7 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
                 .setMachineResponse(machineResponse));
         repairRequest.setConversationId("repair-" + machineType.getMachineName() + "-" + System.currentTimeMillis());
         repairRequest.setReplyWith("repair-request-" + System.currentTimeMillis());
-
+        //((CoordinatorAgent) myAgent).markMaintenanceAgentAsUnavailable(maintenanceAgent);
         myAgent.send(repairRequest);
         System.out.println("Sent repair request to: " + maintenanceAgent.getLocalName());
     }

@@ -53,16 +53,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
                 proposal.setContent("I can repair the machine.");
                 myAgent.send(proposal);
                 System.out.println("Proposed to repair the machine.");
-
                 busyRepairing = true;
-
-                myAgent.addBehaviour(new OneShotBehaviour(myAgent) {
-                    @Override
-                    public void action() {
-                        busyRepairing = false;
-                        System.out.println("Repair completed. The agent is now available again.");
-                    }
-                });
             } else {
                 ACLMessage refuseMessage = cfpMessage.createReply();
                 refuseMessage.setPerformative(ACLMessage.REFUSE);
@@ -107,6 +98,7 @@ public class MaintenanceRequestReceiver extends CyclicBehaviour {
                     repairCompletedMessage.setReplyWith(repairRequestMessage.getConversationId());
                     myAgent.send(repairCompletedMessage);
                     System.out.println("Repair completed for machine: " +  maintenanceRequestDto.getMachineType().getMachineName());
+                    busyRepairing = false;
                 }
             });
         } catch (Exception e) {
