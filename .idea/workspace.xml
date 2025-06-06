@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Fixes, comments">
-      <change afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRetryManager.java" afterDir="false" />
+    <list default="true" id="9419d6d2-0eb8-4968-be91-8c721261b7fc" name="Changes" comment="DONE: Queue repairs if no agent available">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRepairContractNetInitiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRepairContractNetInitiator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRetryManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ak/main/Ontology/Machines/AbstractMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +175,7 @@
       <workItem from="1748437131440" duration="13106000" />
       <workItem from="1748984052821" duration="1801000" />
       <workItem from="1749066415022" duration="5085000" />
-      <workItem from="1749137702231" duration="29450000" />
+      <workItem from="1749137702231" duration="31506000" />
     </task>
     <task id="LOCAL-00001" summary="Basic agent setup">
       <option name="closed" value="true" />
@@ -435,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749164891833</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="DONE: Queue repairs if no agent available">
+      <option name="closed" value="true" />
+      <created>1749172737521</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1749172737521</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,17 +485,13 @@
     <MESSAGE value="DONE: Changed example&#10;WIP: Fixes" />
     <MESSAGE value="WIP: Fixes, debug" />
     <MESSAGE value="DONE: Fixes, comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="DONE: Fixes, comments" />
+    <MESSAGE value="DONE: Queue repairs if no agent available" />
+    <option name="LAST_COMMIT_MESSAGE" value="DONE: Queue repairs if no agent available" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Maintenance/MaintenanceRequestReceiver.java</url>
           <line>92</line>
@@ -502,13 +504,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="113" />
+          <line>65</line>
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MaintenanceRetryManager.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="114" />
+          <url>file://$PROJECT_DIR$/src/ak/main/Agents/CoordinatorAgent.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ak/main/Behaviours/Coordinator/MachineStatusInspector.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

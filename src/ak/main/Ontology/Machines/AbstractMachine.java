@@ -54,7 +54,7 @@ public abstract class AbstractMachine implements Concept {
             }
         }
 
-        Thread.sleep(6000);
+        Thread.sleep(3000);
 
         System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
     }

@@ -1,6 +1,9 @@
 package ak.main.Agents;
 
-import ak.main.Behaviours.Coordinator.*;
+import ak.main.Behaviours.Coordinator.MachineStartReplyReciever;
+import ak.main.Behaviours.Coordinator.MachineStatusInspector;
+import ak.main.Behaviours.Coordinator.MachineStopReplyReciever;
+import ak.main.Behaviours.Coordinator.MaintenanceResponseReceiver;
 import ak.main.Ontology.CarFactoryOntology;
 import ak.main.Ontology.Constants.MachineStatus;
 import ak.main.Ontology.Constants.MachineType;
@@ -24,7 +27,6 @@ public class CoordinatorAgent extends Agent {
         getContentManager().registerLanguage(new SLCodec());
         getContentManager().registerOntology(CarFactoryOntology.ontologyInstance);
         maintenanceAgents = Arrays.asList(queryMaintenanceAgents());
-        MaintenanceRetryManager.startRetryLoop(this);
 
         addBehaviour(new MachineStartReplyReciever(this));
         addBehaviour(new MachineStopReplyReciever(this));
