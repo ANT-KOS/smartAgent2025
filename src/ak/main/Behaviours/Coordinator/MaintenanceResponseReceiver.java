@@ -41,7 +41,7 @@ public class MaintenanceResponseReceiver extends CyclicBehaviour {
                     if (response.contains("REPAIRED")) {
                         if (machineStatus == null || !machineStatus.equals(MachineStatus.OPERATING)) {
                             ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
-                            ((CoordinatorAgent) myAgent).notifyRepairCompleted(msg.getSender());
+                            ((CoordinatorAgent) myAgent).markMaintenanceAgentAsAvailable(msg.getSender());
                         }
                     } else if (response.contains("REPAIRS STARTED")) {
                         if (machineStatus == null || !machineStatus.equals(MachineStatus.UNDER_MAINTENANCE)) {

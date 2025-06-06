@@ -29,6 +29,7 @@ import java.util.List;
 //3. Will request supplies from the warehouse agent
 public class MachineStatusInspector extends CyclicBehaviour {
     private static LinkedList<MaintenanceRequestDto> maintenanceRequestQueue = new LinkedList<>();
+    private boolean isRetryScheduled = false;
 
     public MachineStatusInspector(CoordinatorAgent agent) {
         super(agent);
@@ -40,11 +41,24 @@ public class MachineStatusInspector extends CyclicBehaviour {
                 MessageTemplate.MatchPerformative(ACLMessage.INFORM)
         );
 
+        MessageTemplate triggerTemplate = MessageTemplate.MatchConversationId("trigger-queue-processing");
+        ACLMessage triggerMsg = myAgent.receive(triggerTemplate);
+        if (triggerMsg != null) {
+            try {
+                processQueuedRequests(); // modify method to not need params
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return;
+        }
+
         ACLMessage msg = myAgent.receive(template);
         if (msg != null && msg.getSender().getLocalName().startsWith("MachineAgent_")) {
             try {
                 MachineResponsesDto machineResponseDto = (MachineResponsesDto) msg.getContentObject();
-                if (!machineResponseDto.getMachineResponses().isEmpty()) {
+                if ((((CoordinatorAgent) myAgent).getMachineStatus(machineResponseDto.getMachineType()) == null
+                        || ((CoordinatorAgent) myAgent).getMachineStatus(machineResponseDto.getMachineType()).equals(MachineStatus.OPERATING))
+                        && !machineResponseDto.getMachineResponses().isEmpty()) {
                     for (MachineResponse m : machineResponseDto.getMachineResponses()) {
                         switch (m) {
                             case MachineResponse.ALUMINIUM_LEVEL_LOW,
@@ -108,7 +122,7 @@ public class MachineStatusInspector extends CyclicBehaviour {
                 @Override
                 protected void onWake() {
                     try {
-                        processQueuedRequests(machineType, machineResponse);  // Retry processing the requests after delay
+                        processQueuedRequests();  // Retry processing the requests after delay
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -121,21 +135,24 @@ public class MachineStatusInspector extends CyclicBehaviour {
         processMaintenanceRequest(machineType, machineResponse, availableMaintenanceAgents);
     }
 
-    private void processQueuedRequests(MachineType machineType, MachineResponse machineResponse) throws IOException {
+    public void processQueuedRequests() throws IOException {
         List<AID> availableMaintenanceAgents = ((CoordinatorAgent) myAgent).getAvailableMaintenanceAgents();
 
         if (availableMaintenanceAgents == null || availableMaintenanceAgents.isEmpty()) {
-            // If no agents are still available, retry after 5 seconds
-            myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
-                @Override
-                protected void onWake() {
-                    try {
-                        processQueuedRequests(machineType, machineResponse);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+            if (!isRetryScheduled) {
+                isRetryScheduled = true;
+                // If no agents are still available, retry after 5 seconds
+                myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
+                    @Override
+                    protected void onWake() {
+                        try {
+                            processQueuedRequests();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                }
-            });
+                });
+            }
             return;
         }
 
@@ -144,10 +161,25 @@ public class MachineStatusInspector extends CyclicBehaviour {
         while (iterator.hasNext()) {
             MaintenanceRequestDto request = iterator.next();
 
-            processMaintenanceRequest(machineType, machineResponse, availableMaintenanceAgents);
+            processMaintenanceRequest(request.getMachineType(), request.getMachineResponse(), availableMaintenanceAgents);
 
             // Remove the processed request from the queue
             iterator.remove();
+        }
+
+        if (!maintenanceRequestQueue.isEmpty() && !isRetryScheduled) {
+            isRetryScheduled = true;
+            myAgent.addBehaviour(new WakerBehaviour(myAgent, 5000) {
+                @Override
+                protected void onWake() {
+                    isRetryScheduled = false;
+                    try {
+                        processQueuedRequests();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
         }
     }
 
@@ -166,6 +198,6 @@ public class MachineStatusInspector extends CyclicBehaviour {
 
         System.out.println("Maintenance CFP for: " + machineType + " has been sent.");
 
-        myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCFP, machineType, machineResponse));
+        myAgent.addBehaviour(new MaintenanceRepairContractNetInitiator(myAgent, repairCFP, machineType, machineResponse, this));
     }
 }

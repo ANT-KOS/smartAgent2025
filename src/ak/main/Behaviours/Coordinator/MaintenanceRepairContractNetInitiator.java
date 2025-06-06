@@ -3,6 +3,7 @@ package ak.main.Behaviours.Coordinator;
 import ak.main.Agents.CoordinatorAgent;
 import ak.main.Ontology.CarFactoryOntology;
 import ak.main.Ontology.Constants.MachineResponse;
+import ak.main.Ontology.Constants.MachineStatus;
 import ak.main.Ontology.Constants.MachineType;
 import ak.main.Ontology.Dto.MaintenanceRequestDto;
 import jade.core.AID;
@@ -20,16 +21,18 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
     private MachineType machineType;
     private MachineResponse machineResponse;
     private ACLMessage repairCfp;
+    private MachineStatusInspector inspector;
 
-    public MaintenanceRepairContractNetInitiator(
-            Agent agent,
-            ACLMessage repairCfp,
-            MachineType machineType,
-            MachineResponse machineResponse) {
+    public MaintenanceRepairContractNetInitiator(Agent agent,
+                                                 ACLMessage repairCfp,
+                                                 MachineType machineType,
+                                                 MachineResponse machineResponse,
+                                                 MachineStatusInspector machineStatusInspector) {
         super(agent, repairCfp);
         this.machineType = machineType;
         this.machineResponse = machineResponse;
         this.repairCfp = repairCfp;
+        this.inspector = machineStatusInspector;
     }
 
     protected void handlePropose(ACLMessage propose, Vector proposals) {
@@ -67,6 +70,23 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
         }
     }
 
+    protected void handleInform(ACLMessage inform) {
+        ((CoordinatorAgent) myAgent).changeMachineStatus(machineType, MachineStatus.OPERATING);
+        try {
+            inspector.processQueuedRequests();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected void handleFailure(ACLMessage failure) {
+        try {
+            inspector.processQueuedRequests();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void sendRepairRequest(AID maintenanceAgent) throws IOException {
         ACLMessage repairRequest = new ACLMessage(ACLMessage.REQUEST);
         repairRequest.addReceiver(maintenanceAgent);
@@ -77,7 +97,6 @@ public class MaintenanceRepairContractNetInitiator extends ContractNetInitiator 
                 .setMachineResponse(machineResponse));
         repairRequest.setConversationId("repair-" + machineType.getMachineName() + "-" + System.currentTimeMillis());
         repairRequest.setReplyWith("repair-request-" + System.currentTimeMillis());
-        //((CoordinatorAgent) myAgent).markMaintenanceAgentAsUnavailable(maintenanceAgent);
         myAgent.send(repairRequest);
         System.out.println("Sent repair request to: " + maintenanceAgent.getLocalName());
     }

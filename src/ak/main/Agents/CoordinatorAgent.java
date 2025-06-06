@@ -14,6 +14,7 @@ import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
+import jade.lang.acl.ACLMessage;
 
 import java.util.*;
 
@@ -66,13 +67,18 @@ public class CoordinatorAgent extends Agent {
 
     //The coordinator agent keeps a status of the machines and the maintenance availability
     public synchronized void markMaintenanceAgentAsUnavailable(AID maintenanceAgent) {
-        unavailableMaintenanceAgents.add(maintenanceAgent);
-        System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now unavailable.");
+        if (!unavailableMaintenanceAgents.contains(maintenanceAgent)) {
+            unavailableMaintenanceAgents.add(maintenanceAgent);
+            System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now unavailable.");
+        }
     }
 
     public synchronized void markMaintenanceAgentAsAvailable(AID maintenanceAgent) {
-        unavailableMaintenanceAgents.remove(maintenanceAgent);
-        System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now available.");
+        if (unavailableMaintenanceAgents.contains(maintenanceAgent)) {
+            unavailableMaintenanceAgents.remove(maintenanceAgent);
+            System.out.println("Maintenance agent " + maintenanceAgent.getLocalName() + " is now available.");
+            processQueuedMaintenanceRequests();
+        }
     }
 
     public synchronized List<AID> getAvailableMaintenanceAgents() {
@@ -85,7 +91,11 @@ public class CoordinatorAgent extends Agent {
         return maintenanceAgents;
     }
 
-    public synchronized void notifyRepairCompleted(AID agent) {
-        markMaintenanceAgentAsAvailable(agent);
+    public void processQueuedMaintenanceRequests() {
+        ACLMessage trigger = new ACLMessage(ACLMessage.INFORM);
+        trigger.setOntology(CarFactoryOntology.CAR_FACTORY_ONTOLOGY);
+        trigger.setConversationId("trigger-queue-processing");
+        trigger.addReceiver(getAID());  // send to self
+        send(trigger);
     }
 }

@@ -23,7 +23,8 @@ public class MachineAgent extends Agent {
         if (args != null && args.length > 0 && args[0] instanceof AbstractMachine machine) {
             Random random = new Random();
 
-            addBehaviour(new MachineStatusSender(this, machine, coordinatorAgent, 14000 + (random.nextInt(6) * 1000)));
+            //Random ticker time for each machine agent.
+            addBehaviour(new MachineStatusSender(this, machine, coordinatorAgent, 8000 + (random.nextInt(3) * 1000)));
             addBehaviour(new MachineStartRequestReciever(this, machine));
             addBehaviour(new MachineStopRequestReciever(this, machine));
         } else {

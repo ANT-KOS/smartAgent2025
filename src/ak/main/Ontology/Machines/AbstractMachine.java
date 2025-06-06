@@ -6,6 +6,9 @@ import jade.content.Concept;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractMachine implements Concept {
     protected ArrayList<MachineResponse> responses = new ArrayList<>();
@@ -42,20 +45,10 @@ public abstract class AbstractMachine implements Concept {
 
     public void repair() throws InterruptedException {
         //Simulate a repair routine
-        Random random = new Random();
-        int maxAttempts = 5;
-        for (int i = 0; i < maxAttempts -1; i++) {
-            boolean success = random.nextBoolean();
-            System.out.println("Attempt " + (i + 1) + " to repair: " + this.getMachineType().getMachineName());
-
-            if (success) {
-                System.out.println("Repair Success");
-                return;
-            }
-        }
-
-        Thread.sleep(3000);
-
-        System.out.println("Repair Completed after " + (maxAttempts + 1) + " attempts");
+        int repairDurationInMS = 4000;
+        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+        scheduler.schedule(() -> {
+            System.out.println("Repair duration" +  repairDurationInMS + " ms");
+        },repairDurationInMS, TimeUnit.MILLISECONDS);
     }
 }
