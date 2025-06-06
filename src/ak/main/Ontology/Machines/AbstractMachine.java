@@ -48,7 +48,7 @@ public abstract class AbstractMachine implements Concept {
         int repairDurationInMS = 4000;
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.schedule(() -> {
-            System.out.println("Repair duration" +  repairDurationInMS + " ms");
+            System.out.println("Repair duration " +  repairDurationInMS + " ms");
         },repairDurationInMS, TimeUnit.MILLISECONDS);
     }
 }
