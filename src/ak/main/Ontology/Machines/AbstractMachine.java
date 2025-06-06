@@ -45,7 +45,7 @@ public abstract class AbstractMachine implements Concept {
 
     public void repair() throws InterruptedException {
         //Simulate a repair routine
-        int repairDurationInMS = 4000;
+        int repairDurationInMS = 3000;
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.schedule(() -> {
             System.out.println("Repair duration " +  repairDurationInMS + " ms");
